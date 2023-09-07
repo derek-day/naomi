@@ -59,6 +59,23 @@ h1,
 h2,
 h3,
 h4,
-p {
+p,
+a,
+button,
+nav,
+li {
   color: var(--txt-color-dark);
+}
+
+a {
+    text-decoration-color: var(--dark);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 8px;    
+}
+
+
+h1 {
+    font-family: 'Garamond-Light';
+    font-size: var(--font-size-5);
+    font-weight: normal;
 }
