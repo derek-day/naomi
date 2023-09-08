@@ -42,9 +42,9 @@ html {
 
 body {
     font-family: system-ui;
-    /* font-size: 1.125rem;
-    line-height: 0.5; */
+    line-height: 0.5;
     background-color: var(--background);
+    margin: 0;
 }
 
 .preload * {
