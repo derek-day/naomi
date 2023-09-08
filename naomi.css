@@ -29,6 +29,10 @@
     --font-size-5: 4.8rem;
     --font-size-6: 9.6rem;
     --font-size-7: 11.6rem;
+
+    --padding-sm: 2rem;
+    --padding-md: 4rem;
+    --padding-lg: 7.5rem;
 }
   
 html {
@@ -42,9 +46,9 @@ html {
 
 body {
     font-family: system-ui;
-    line-height: 0.5;
     background-color: var(--background);
     margin: 0;
+    width: 100%;
 }
 
 .preload * {
@@ -53,7 +57,16 @@ body {
   -moz-transition: none !important;
   -ms-transition: none !important;
   -o-transition: none !important;
-} 
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
 
 h1,
 h2,
@@ -84,7 +97,6 @@ h1 {
     font-weight: normal;
 }
 
-p,
 li {
     font-family: 'Satoshi-Light';
     font-weight: normal;
@@ -92,6 +104,8 @@ li {
 
 p {
     font-size: 1.6rem;
+    font-family: 'Satoshi-Regular';
+    font-weight: normal;
 }
 
 nav ul {
@@ -100,9 +114,10 @@ nav ul {
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    gap: 1.6rem;
+    gap: var(--padding-md);
     list-style-type: none;
     padding-inline-start: 0;
+    margin: calc(var(--padding-sm) - 1rem) 0 var(--padding-sm);
 }
 
 nav li {
@@ -117,7 +132,111 @@ nav h1 {
     text-transform: uppercase;
     font-family: 'Garamond-Regular';
     text-align: center;
-    margin-block-start: 1rem;
+    margin-block-start: 0;
     margin-block-end: 0;
+    margin-top: var(--padding-sm);
     font-size: 4rem;
+}
+
+header {
+    width: 100%;
+    position: relative;
+    background: url("assets/images/header.jpg");
+    height: 1003px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#background {
+    /* margin-top: -4rem; */
+    transform: translateY(-4rem);
+    z-index: -1;
+    user-select: none;
+    background-image: url("assets/images/vine.png");
+    width: 100%;
+    /* height: auto; */
+    /* height: 100vh; */
+    height: 2704px;
+    position: absolute;
+    overflow: auto;
+    background-repeat:no-repeat;
+    background-size:contain;
+    -webkit-animation: vibrate 5s cubic-bezier(.36, .07, .19, .97) infinite;
+    animation: vibrate 5s cubic-bezier(.36, .07, .19, .97) infinite;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    transition: transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}  
+
+@keyframes vibrate {
+    0.50%, 10%, 20%, 30%, 40%, 50%
+    {
+      -webkit-transform: translate3d(0.3px, 0.5px, 0);
+      transform: translate3d(0.3px, 0, 0);
+    }
+    5%, 15%, 25%, 35%, 45%
+    {
+      -webkit-transform: translate3d(-0.7px, -0.2px, 0);
+      transform: translate3d(-0.7px, 0, 0);
+    }
+    100% {
+      -webkit-transform: translate3d(0.2px, 0.1px, 0);
+      transform: translate3d(0.2px, 0, 0);
+    }
+}  
+
+#about {
+    z-index: 1;
+    display: flex;
+    gap: 6.2rem;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#about img {
+    z-index: 1;
+}
+
+#about img::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: url("assets/images/hibuscus.png") no-repeat -30px -50px fixed;
+    mix-blend-mode: luminosity;
+    top: 10px;
+    right: 5px;
+    position: absolute;
+    display: inline-block;
+    z-index: 2;
+}
+
+#about h1, p {
+    max-width: 50%;
+}
+
+#about h1 {
+    font-size: 6.8rem;
+    line-height: 6.8rem;
+}
+
+#about a {
+    line-height: 7.2rem;
+}
+
+#about p {
+    line-height: 3rem;
+    margin: calc(var(--padding-sm) + 1rem) 0 var(--padding-sm);
+}
+
+.button {
+    text-decoration: none;
+    font-size: 1.6rem;
+    border: 1px solid var(--dark);
+    padding: 1rem 2.5rem;
+    letter-spacing: 0.2rem;
+    font-family: "Satoshi-Regular";
+    font-weight: normal;
 }
