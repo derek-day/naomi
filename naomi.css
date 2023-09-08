@@ -10,12 +10,12 @@
 
 @font-face {
     font-family: "Satoshi-Light";
-    src: url('assets/fonts/Satoshi-Light.ttf') format("truetype");
+    src: url('assets/fonts/Satoshi-Light.otf') format("opentype");
 }
 
 @font-face {
     font-family: "Satoshi-Regular";
-    src: url('assets/fonts/Satoshi-Regular.ttf') format("truetype");
+    src: url('assets/fonts/Satoshi-Regular.otf') format("opentype");
 }
 
 :root {
@@ -64,7 +64,7 @@ a,
 button,
 nav,
 li {
-  color: var(--txt-color-dark);
+  color: var(--dark);
 }
 
 a {
@@ -78,9 +78,46 @@ a:hover {
     color: var(--background);
 }
 
-
 h1 {
     font-family: 'Garamond-Light';
     font-size: var(--font-size-5);
     font-weight: normal;
+}
+
+p,
+li {
+    font-family: 'Satoshi-Light';
+    font-weight: normal;
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 1.6rem;
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+
+nav li {
+    font-family: 'Satoshi-Light';
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    font-size: 2rem;
+}
+
+nav h1 {
+    text-transform: uppercase;
+    font-family: 'Garamond-Regular';
+    text-align: center;
+    margin-block-start: 1rem;
+    margin-block-end: 0;
+    font-size: 4rem;
 }
