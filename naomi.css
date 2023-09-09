@@ -185,7 +185,7 @@ header {
     }
 }  
 
-#about {
+/* #about {
     z-index: 1;
     display: flex;
     gap: 6.2rem;
@@ -194,23 +194,31 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-}
+} */
 
-#about img {
+#about {
     z-index: 1;
-}
-
-#about img::after {
-    content: "";
+    display: grid;
+    gap: 4rem;
     width: 100%;
     height: 100%;
-    background: url("assets/images/hibuscus.png") no-repeat -30px -50px fixed;
-    mix-blend-mode: luminosity;
-    top: 10px;
-    right: 5px;
-    position: absolute;
-    display: inline-block;
-    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+}
+
+.about-image-container {
+    display: grid;
+    justify-content: right;
+}
+
+/* .about-image {
+    width: 100%;
+    height: auto;
+} */
+
+.about-text-container {
+    position: relative;
 }
 
 #about h1, p {
@@ -235,10 +243,13 @@ header {
     text-decoration: none;
     font-size: 1.6rem;
     border: 1px solid var(--dark);
-    padding: 1rem 2.5rem;
+    /* padding: 1rem 2.5rem; */
+    padding: 0rem 2.5rem;
     letter-spacing: 0.2rem;
     font-family: "Satoshi-Regular";
     font-weight: normal;
+    /* position: absolute;
+    bottom: 0; */
 }
 
 @media screen and (max-width: 500px) {
