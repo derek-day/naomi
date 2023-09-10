@@ -317,6 +317,12 @@ header {
 }
 
 @media screen and (max-width: 500px) {
+    nav.scrolled {
+        transition: all 0.5s ease-in 0s;
+        background-color: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(1.6rem);
+    }
+
     .container {
         display: block;
         padding: 0 10%;
