@@ -17,6 +17,13 @@ if (!isMobile()) {
     gridImageSize();
 }
 
-// window.addEventListener('resize', gridImageSize);
+var nav = $("#nav");
 
-// gridImageSize();
+$(window).on('scroll', function() {
+  "use strict";
+  if ($(window).scrollTop() >= 10) {
+    nav.addClass("scrolled");
+  } else {
+    nav.removeClass("scrolled");
+  }
+});

@@ -115,6 +115,21 @@ p {
     font-weight: normal;
 }
 
+nav {
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    transition: all 0.5s ease-in 0s;
+    background-color: transparent;
+    backdrop-filter: blur(0rem);
+}
+
+nav.scrolled {
+    transition: all 0.5s ease-in 0s;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(1.6rem);
+}
+
 nav ul {
     display: flex;
     justify-content: center;
@@ -141,7 +156,7 @@ nav li a {
 
 nav li a:hover {
     text-decoration: underline;
-    background-color: var(--background);
+    background-color: transparent;
     color: var(--dark);
     text-decoration-color: var(--dark);
 }
@@ -154,6 +169,10 @@ nav h1 {
     margin-block-end: 0;
     margin-top: var(--padding-sm);
     font-size: 4rem;
+}
+
+main {
+    padding-top: 12rem;
 }
 
 header {
