@@ -243,26 +243,24 @@ header {
     height: 100%;
 }
 
-/* .about-image-container::after {
-    content: '';
-    background: url("./assets/images/hibiscus.png") no-repeat;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    background-position: right;
-    top: 0;
-    left: 0;
-    mix-blend-mode: luminosity;
-} */
-
 .about-text-container {
     position: relative;
 }
 
 .library-image-container {
     display: grid;
-    justify-content: left;
+    position: relative;
+    background: url("assets/images/book.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
 }
+
+/* .library-image-container {
+    display: grid;
+    justify-content: left;
+} */
 
 .library-text-container {
     position: relative;
@@ -319,7 +317,7 @@ header {
 @media screen and (max-width: 500px) {
     nav.scrolled {
         transition: all 0.5s ease-in 0s;
-        background-color: rgba(255, 255, 255, 0.9);
+        background-color: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(1.6rem);
     }
 
