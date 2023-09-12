@@ -1,4 +1,39 @@
 @font-face {
+    font-family: "Bodoni-Light";
+    src: url('assets/fonts/Bodoni-Light.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "Bodoni-Regular";
+    src: url('assets/fonts/Bodoni-Regular.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "Bodoni-Medium";
+    src: url('assets/fonts/Bodoni-Medium.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "Bodoni-Semibold";
+    src: url('assets/fonts/Bodoni-Semibold.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "Bodoni-Bold";
+    src: url('assets/fonts/Bodoni-Bold.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "Bodoni-Extrabold";
+    src: url('assets/fonts/Bodoni-Extrabold.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "Bodoni-Heavy";
+    src: url('assets/fonts/Bodoni-Heavy.ttf') format("truetype");
+}
+
+@font-face {
     font-family: "Garamond-Light";
     src: url('assets/fonts/Garamond-Light.otf') format("opentype");
 }
@@ -21,7 +56,10 @@
 :root {
     --background: #FFFCF4;
     --dark: #1E1E1E;
-  
+
+    --color-text: #3a3a3a;
+    --color-body-text: #333232;
+    
     --font-size-1: 0.8rem;
     --font-size-2: 1.6rem;
     --font-size-3: 1.8rem;
@@ -168,7 +206,8 @@ nav h1 {
     margin-block-start: 0;
     margin-block-end: 0;
     margin-top: var(--padding-sm);
-    font-size: 4rem;
+    font-size: 3.5rem;
+    font-family: "Bodoni-Semibold";
 }
 
 main {
@@ -178,10 +217,21 @@ main {
 header {
     width: 100%;
     position: relative;
-    background: url("assets/images/header.jpg");
-    height: 1003px;
+    /* background: url("assets/images/header.jpg");
+    height: 1003px; */
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+.header-desk {
+    width: 100%;
+    height: 100%;
+}
+
+.header-mob {
+    width: 100%;
+    height: 100%;
+    display: none;
 }
 
 #background {
@@ -319,6 +369,14 @@ header {
         transition: all 0.5s ease-in 0s;
         background-color: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(1.6rem);
+    }
+
+    .header-desk {
+        display: none;
+    }
+
+    .header-mob {
+        display: block;
     }
 
     .container {
