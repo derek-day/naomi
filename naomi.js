@@ -3,11 +3,13 @@ function isMobile() {
 }
 
 function gridImageSize() {
-    $('.library-image').height($('.library-text-container').height()+150+"px")
+    $('.library-image').height($('.library-text-container').height()+125+"px")
     $('.about-image-container').height($('.about-text-container').height())
 
     $(".library-text-header").width($(".library-p").width())
     $(".library-button").width($(".library-p").width())
+
+    $(".social-leaf").width($(".social-main").width())
 }
     
 if (!isMobile()) {

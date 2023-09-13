@@ -310,7 +310,6 @@ header {
 .library-image-container {
     display: grid;
     position: relative;
-    /* background: url("assets/images/book.png") no-repeat; */
     background-position: center;
     background-size: cover;
     width: 100%;
@@ -334,8 +333,13 @@ header {
     display: grid;
 }
 
-.library-text-container h1 {
+.library-text-header h1 {
     white-space: nowrap;
+}
+
+.library-text-header h2 {
+    padding-left: 0.75rem;
+    margin-top: -1rem;
 }
 
 .library-button {
@@ -373,6 +377,39 @@ header {
 
 .button:hover {
     color: white;
+}
+
+#social {
+    display: grid;
+    margin-bottom: 8.5rem;
+    padding: 0 5%;
+}
+
+.social-leaf {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    place-self: center;
+    max-width: fit-content;
+    mix-blend-mode: multiply;
+}
+
+.social-leaf img:nth-child(1) {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);  
+}
+
+.social-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.social-main {
+    width: 100%;
+}
+
+footer {
+    background-color: #8E5438;
 }
 
 @media screen and (max-width: 1800px) {
