@@ -285,6 +285,7 @@ header {
 
 #library {
     display: grid;
+    gap: 1rem;
 }
 
 .about-image-container {
@@ -329,6 +330,18 @@ header {
     display: grid;
 }
 
+.library-text-header {
+    display: grid;
+}
+
+.library-text-container h1 {
+    white-space: nowrap;
+}
+
+.library-button {
+    display: flex;
+}
+
 .container h1, p {
     max-width: 60%;
 }
@@ -344,7 +357,8 @@ header {
 
 .container p {
     line-height: 3rem;
-    margin: calc(var(--padding-sm) + 1rem) 0 var(--padding-sm);
+    /* margin: calc(var(--padding-sm) + 1rem) 0 var(--padding-sm); */
+    margin: var(--padding-sm) 0 var(--padding-sm);
 }
 
 .button {
@@ -355,6 +369,10 @@ header {
     letter-spacing: 0.2rem;
     font-family: "Satoshi-Regular";
     font-weight: normal;
+}
+
+.button:hover {
+    color: white;
 }
 
 @media screen and (max-width: 1800px) {
