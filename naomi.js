@@ -4,9 +4,16 @@ function isMobile() {
 
 function gridImageSize() {
     // $('.about-image').height($('.about-text-container').height())
-    // $('.library-image').height($('.library-text-container').height()+130+"px")
+    $('.library-image').height($('.library-text-container').height()+150+"px")
     $('.about-image-container').height($('.about-text-container').height())
-    $('.library-image-container').height($('.library-text-container').height()+100+"px")
+    // $('.library-image-container').height($('.library-text-container').height()+100+"px")
+
+
+    // var libraryWidth = $('.library-image').width()
+
+    // var libraryColumn = "1fr " + libraryWidth + "px"
+
+    // document.getElementById("library").style.gridTemplateColumns = libraryColumn
 }
     
 if (!isMobile()) {

@@ -168,6 +168,17 @@ nav.scrolled {
     backdrop-filter: blur(1.6rem);
 }
 
+nav h1 {
+    text-transform: uppercase;
+    font-family: 'Garamond-Regular';
+    text-align: center;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-top: var(--padding-sm);
+    margin-top: calc(var(--padding-sm) + 0.5rem);
+    font-size: 3rem;
+}
+
 nav ul {
     display: flex;
     justify-content: center;
@@ -185,7 +196,7 @@ nav li {
     font-style: normal;
     font-weight: 300;
     line-height: normal;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
 }
 
 nav li a {
@@ -197,18 +208,6 @@ nav li a:hover {
     background-color: transparent;
     color: #616161;
     text-decoration-color: var(--dark);
-}
-
-nav h1 {
-    text-transform: uppercase;
-    font-family: 'Garamond-Regular';
-    text-align: center;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-top: var(--padding-sm);
-    margin-top: calc(var(--padding-sm) + 1rem);
-    font-size: 3.5rem;
-    font-family: "Bodoni-Semibold";
 }
 
 main {
@@ -284,6 +283,10 @@ header {
     padding: 0 5%;
 }
 
+#library {
+    display: grid;
+}
+
 .about-image-container {
     display: grid;
     position: relative;
@@ -306,17 +309,19 @@ header {
 .library-image-container {
     display: grid;
     position: relative;
-    background: url("assets/images/book.png") no-repeat;
+    /* background: url("assets/images/book.png") no-repeat; */
     background-position: center;
     background-size: cover;
     width: 100%;
     height: 100%;
 }
 
-/* .library-image-container {
-    display: grid;
-    justify-content: left;
-} */
+.library-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 500px;
+}
 
 .library-text-container {
     position: relative;
