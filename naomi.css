@@ -410,7 +410,8 @@ header {
     word-spacing: 100vw;
     text-align: right;
     z-index: 2;
-    left: 2vw;
+    /* left: 2vw; */
+    margin: 0 var(--padding-sm);
 }
 
 #social-main {
@@ -439,7 +440,14 @@ header {
 }
 
 .social-media a:hover {
-    background-color: var(--background);
+    background-color: transparent;
+    color: transparent;
+}
+
+.social-media img:hover {
+    background-color: transparent;
+    color: transparent;
+    filter: invert(40%) sepia(6%) saturate(3561%) hue-rotate(316deg) brightness(91%) contrast(99%);
 }
 
 .social-side-image {
@@ -450,6 +458,20 @@ header {
 
 footer {
     background-color: #8E5438;
+}
+
+.footer-media img {
+    filter: invert(93%) sepia(9%) saturate(461%) hue-rotate(1deg) brightness(113%) contrast(103%);
+}
+
+.footer-media a:hover {
+    background-color: transparent;
+    color: transparent;
+}
+
+.footer-media img:hover {
+    background-color: transparent;
+    color: transparent;
 }
 
 @media screen and (max-width: 1800px) {
