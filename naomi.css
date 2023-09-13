@@ -404,8 +404,48 @@ header {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.social-main {
+.social-content h1 {
+    position: relative;
+    font-size: 11.6rem;
+    word-spacing: 100vw;
+    text-align: right;
+    z-index: 2;
+    left: 2vw;
+}
+
+#social-main {
     width: 100%;
+}
+
+.social-side {
+    margin: var(--padding-md) var(--padding-sm);
+}
+
+.social-side p {
+    width: 40%;
+    line-height: 3rem;
+    margin-bottom: calc(var(--padding-sm) + 1rem);
+}
+
+.social-media {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: var(--padding-sm);
+    margin: var(--padding-sm) 0 calc(var(--padding-sm) + 1rem);
+}
+
+.social-media a {
+    width: fit-content;
+}
+
+.social-media a:hover {
+    background-color: var(--background);
+}
+
+.social-side-image {
+    position: relative;
+    width: 62%;
+    right: 7vw;
 }
 
 footer {
