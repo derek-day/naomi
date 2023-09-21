@@ -473,6 +473,10 @@ header {
     right: 7vw;
 }
 
+#social-mob {
+    display: none;
+}
+
 footer {
     background-color: #8E5438;
     padding: 6rem 0 0;
@@ -490,7 +494,7 @@ footer h2 {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     position: relative;
-    right: 7rem;
+    right: 6rem;
 }
 
 .footer-left {
@@ -565,6 +569,10 @@ footer h2 {
     bottom: 8rem;
     position: relative;
     z-index: 1;
+}
+
+#footer-mob {
+    display: none;
 }
 
 @media screen and (max-width: 1800px) {
@@ -710,5 +718,23 @@ footer h2 {
         padding: 1rem 2.5rem;
         place-self: center;
         position: relative;
+    }
+
+    #social {
+        display: none;
+    }
+
+    #social-mob {
+        display: block;
+        padding: 0 10%;
+    }
+
+    footer {
+        display: none;
+    }
+
+    #footer-mob {
+        display: block;
+        padding: 0 10%;
     }
 }
