@@ -304,6 +304,14 @@ header {
     height: 100%;
 }
 
+.about-image-lap {
+    display: none;
+}
+
+.about-image-mob {
+    display: none;
+}
+
 .about-text-container {
     position: relative;
 }
@@ -322,6 +330,10 @@ header {
     height: 100%;
     object-fit: cover;
     max-width: 500px;
+}
+
+.library-image-mob {
+    display: none;
 }
 
 .library-text-container {
@@ -464,7 +476,6 @@ header {
 footer {
     background-color: #8E5438;
     padding: 6rem 0 0;
-
 }
 
 footer h2 {
@@ -577,6 +588,18 @@ footer h2 {
 }
 
 @media screen and (max-width: 1100px) {
+    /* .about-image-container {
+        display: none;
+    }
+
+    .about-image-lap {
+        display: block;
+    }
+
+    .about-image-mob {
+        display: none;
+    } */
+
     .about-text-container h1 {
         font-size: 6rem;
     }
@@ -602,7 +625,7 @@ footer h2 {
     }
 
     .container {
-        display: block;
+        display: block !important;
         padding: 0 10%;
         right: 0;
         left: 0;
@@ -627,6 +650,65 @@ footer h2 {
     }
 
     .container p {
-        margin-bottom: var(--padding-md);
+        margin-bottom: var(--padding-sm);
+    }
+
+    .about-image-container {
+        display: none;
+    }
+
+    .about-image-lap {
+        display: none;
+    }
+
+    .about-image-mob {
+        display: block;
+    }
+
+    .library-image { 
+        display: none;
+    }
+
+    .library-image-mob {
+        display: block;
+        width: 75% !important;
+        place-self: center;
+    }
+
+    .library-text-container {
+        justify-items: left;
+    }
+
+    .library-text-header {
+        text-align: center;
+        place-self: center;
+        margin-bottom: 1rem;
+    }
+
+    .library-text-header h1 {
+        /* font-weight: bold; */
+        font-family: "Garamond-Regular";
+        font-size: 5rem;
+    }
+
+    .library-text-header h2 {
+        /* padding-left: 0; */
+        text-align: left;
+        font-family: "Garamond-Regular";
+        font-size: 4rem;
+    }
+
+    #social {
+        display: block;
+    }
+
+    footer {
+        display: block;
+    }
+
+    .button {
+        padding: 1rem 2.5rem;
+        place-self: center;
+        position: relative;
     }
 }
