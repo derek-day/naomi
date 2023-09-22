@@ -128,7 +128,9 @@ a {
     text-underline-offset: 8px;    
 }
 
-a:hover {
+a:hover,
+a:focus,
+a:focus-within {
     background-color: var(--dark);
     color: var(--background);
 }
@@ -206,7 +208,9 @@ nav li a {
     text-decoration: none;
 }
 
-nav li a:hover {
+nav li a:hover,
+nav li a:focus,
+nav li a:focus-within {
     text-decoration: underline;
     background-color: transparent;
     color: #616161;
@@ -295,17 +299,17 @@ header {
 @keyframes vibrate {
     0.50%, 10%, 20%, 30%, 40%, 50%
     {
-      -webkit-transform: translate3d(0.3px, 0.5px, 0);
-      transform: translate3d(0.3px, 0, 0);
+      -webkit-transform: translate3d(0.3px, 0.5px, 0.4px);
+      transform: translate3d(0.3px, 0.5px, 0.4px);
     }
     5%, 15%, 25%, 35%, 45%
     {
-      -webkit-transform: translate3d(-0.7px, -0.2px, 0);
-      transform: translate3d(-0.7px, 0, 0);
+      -webkit-transform: translate3d(-0.7px, -0.2px, -0.1px);
+      transform: translate3d(-0.7px, -0.2px, -0.1px);
     }
     100% {
-      -webkit-transform: translate3d(0.2px, 0.1px, 0);
-      transform: translate3d(0.2px, 0, 0);
+      -webkit-transform: translate3d(0.2px, 0.4px, 0.3px);
+      transform: translate3d(0.2px, 0.4px, 0.3px);
     }
 }  
 
@@ -428,7 +432,9 @@ header {
     font-weight: normal;
 }
 
-.button:hover {
+.button:hover,
+.button:focus,
+.button:focus-within {
     color: white;
 }
 
@@ -493,7 +499,9 @@ header {
     width: fit-content;
 }
 
-.social-media a:hover {
+.social-media a:hover,
+.social-media a:focus,
+.social-media a:focus-within {
     background-color: transparent;
     color: transparent;
 }
@@ -502,7 +510,9 @@ header {
     width: 50px;
 }
 
-.social-media img:hover {
+.social-media img:hover,
+.social-media img:focus,
+.social-media img:focus-within {
     background-color: transparent;
     color: transparent;
     filter: invert(40%) sepia(6%) saturate(3561%) hue-rotate(316deg) brightness(91%) contrast(99%);
@@ -568,16 +578,17 @@ footer h2 {
     padding: 0 0.7rem;
 }
 
-.footer-media a:hover {
+.footer-media a:hover,
+.footer-media a:focus,
+.footer-media a:focus-within {
     background-color: transparent;
     /* color: transparent; */
-    filter: invert(40%) sepia(6%) saturate(3561%) hue-rotate(316deg) brightness(91%) contrast(99%);
-
-
-
+    /* filter: invert(40%) sepia(6%) saturate(3561%) hue-rotate(316deg) brightness(91%) contrast(99%); */
 }
 
-.footer-media img:hover {
+.footer-media img:hover,
+.footer-media img:focus,
+.footer-media img:focus-within {
     background-color: transparent;
     color: transparent;
 }
@@ -603,7 +614,9 @@ footer h2 {
     text-decoration: none;
 }
 
-.footer-nav a:hover {
+.footer-nav a:hover,
+.footer-nav a:focus,
+.footer-nav a:focus-within {
     color: var(--dark);
     background-color: var(--background);
 }
