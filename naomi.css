@@ -235,8 +235,10 @@ header {
     display: none;
 }
 
+.background {
+}
+
 #background {
-    transform: translateY(-4rem);
     z-index: -1;
     user-select: none;
     background-image: url("assets/images/vine.png");
@@ -248,10 +250,47 @@ header {
     background-size:contain;
     -webkit-animation: vibrate 5s cubic-bezier(.36, .07, .19, .97) infinite;
     animation: vibrate 5s cubic-bezier(.36, .07, .19, .97) infinite;
-    -webkit-transform: translate3d(0, 0, 0);
+    margin-top: -6rem;
+    /* rotate: -4deg;
+    left: 10vw; */
+    /* -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    transition: transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
-}  
+    transition: transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1); */
+}
+
+#background-mob {
+    z-index: -1;
+    user-select: none;
+    background-image: url("assets/images/vine-mob.png");
+    width: 100%;
+    height: 3000px;
+    position: absolute;
+    overflow: auto;
+    background-repeat:no-repeat;
+    background-size:contain;
+    -webkit-animation: vibrate 5s cubic-bezier(.36, .07, .19, .97) infinite;
+    animation: vibrate 5s cubic-bezier(.36, .07, .19, .97) infinite;
+    margin-top: -6rem;
+    display: none;
+}
+
+#reversebackground {
+    z-index: -1;
+    user-select: none;
+    background-image: url("assets/images/reversevine.png");
+    width: 100%;
+    height: 2704px;
+    position: absolute;
+    overflow: auto;
+    background-repeat:no-repeat;
+    background-size:contain;
+    -webkit-animation: vibrate 5s cubic-bezier(.36, .07, .19, .97) infinite;
+    animation: vibrate 5s cubic-bezier(.36, .07, .19, .97) infinite;
+    left: 50vw;
+    /* -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    transition: transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1); */
+}
 
 @keyframes vibrate {
     0.50%, 10%, 20%, 30%, 40%, 50%
@@ -617,7 +656,16 @@ footer h2 {
     }
 }
 
-@media screen and (max-width: 500px) {
+/* @media screen and (max-width: 500px) { */
+@media screen and (max-width: 800px) {
+    #background {
+        display: none;
+    }
+
+    #background-mob {
+        display: block;
+    }
+
     nav.scrolled {
         transition: all 0.5s ease-in 0s;
         background-color: rgba(255, 255, 255, 0.95);
