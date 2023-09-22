@@ -299,17 +299,17 @@ header {
 @keyframes vibrate {
     0.50%, 10%, 20%, 30%, 40%, 50%
     {
-      -webkit-transform: translate3d(0.3px, 0.5px, 0.4px);
-      transform: translate3d(0.3px, 0.5px, 0.4px);
+      -webkit-transform: translate3d(0.3px, 0.5px, 0);
+      transform: translate3d(0.3px, 0.5px, 0);
     }
     5%, 15%, 25%, 35%, 45%
     {
-      -webkit-transform: translate3d(-0.7px, -0.2px, -0.1px);
-      transform: translate3d(-0.7px, -0.2px, -0.1px);
+      -webkit-transform: translate3d(-0.7px, -0.2px, 0);
+      transform: translate3d(-0.7px, -0.2px, 0);
     }
     100% {
-      -webkit-transform: translate3d(0.2px, 0.4px, 0.3px);
-      transform: translate3d(0.2px, 0.4px, 0.3px);
+      -webkit-transform: translate3d(0.2px, 0.4px, 0);
+      transform: translate3d(0.2px, 0.4px, 0);
     }
 }  
 
