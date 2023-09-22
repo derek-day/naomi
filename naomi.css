@@ -816,3 +816,9 @@ footer h2 {
         text-align: left;
     }
 }
+
+@media not all and (min-resolution:.001dpcm) {
+    #background {
+        display: none;
+    }
+}
