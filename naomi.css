@@ -819,6 +819,6 @@ footer h2 {
 
 @media not all and (min-resolution:.001dpcm) {
     #background {
-        display: none;
+        /* display: none; */
     }
 }
