@@ -570,7 +570,11 @@ footer h2 {
 
 .footer-media a:hover {
     background-color: transparent;
-    color: transparent;
+    /* color: transparent; */
+    filter: invert(40%) sepia(6%) saturate(3561%) hue-rotate(316deg) brightness(91%) contrast(99%);
+
+
+
 }
 
 .footer-media img:hover {
@@ -597,6 +601,11 @@ footer h2 {
 .footer-nav a {
     color: var(--background);
     text-decoration: none;
+}
+
+.footer-nav a:hover {
+    color: var(--dark);
+    background-color: var(--background);
 }
 
 .footer-nav-image {
