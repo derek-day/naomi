@@ -369,6 +369,7 @@ header {
     height: 100%;
     object-fit: cover;
     max-width: 500px;
+    max-height: 450px;
 }
 
 .library-image-mob {
@@ -468,6 +469,7 @@ header {
 
 #social-main {
     width: 100%;
+    min-width: 300px;
 }
 
 .social-side {
@@ -749,7 +751,7 @@ footer h2 {
 
     .library-text-header h2 {
         /* padding-left: 0; */
-        text-align: left;
+        text-align: center;
         font-family: "Garamond-Regular";
         font-size: 4rem;
     }
@@ -784,5 +786,11 @@ footer h2 {
     #footer-mob {
         display: block;
         padding: 0 10%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .library-text-header h2 {
+        text-align: left;
     }
 }
