@@ -678,6 +678,10 @@ footer h2 {
     .social-side-image {
         display: none;
     }
+
+    .library-image {
+        max-height: 450px;
+    }    
 }
 
 /* @media screen and (max-width: 500px) { */
