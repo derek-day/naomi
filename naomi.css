@@ -491,7 +491,8 @@ header {
     /* padding: 0rem 2.5rem; */
     padding: 0rem 1.5rem;
     letter-spacing: 0.2rem;
-    font-family: "Satoshi-Regular";
+    /* font-family: "Satoshi-Regular"; */
+    font-family: "Juana-Regular";
     font-weight: normal;
 }
 
