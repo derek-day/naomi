@@ -346,7 +346,8 @@ header {
     z-index: 1;
     display: grid;
     position: relative;
-    gap: 4rem;
+    /* gap: 4rem; */
+    gap: 5rem;
     width: 100%;
     height: 100%;
     justify-content: center;
@@ -360,7 +361,9 @@ header {
 #library {
     display: grid;
     /* gap: 1rem; */
-    gap: 4rem;
+    /* gap: 4rem; */
+    gap: 2rem;
+    left: 2rem;
 }
 
 .about-image-container {
@@ -391,6 +394,12 @@ header {
 
 .about-text-container {
     position: relative;
+    top: -5rem;
+}
+
+.about-text-container p {
+    max-width: 60%;
+    text-wrap: balance;
 }
 
 .library-image-container {
@@ -438,7 +447,9 @@ header {
 }
 
 .library-p {
-    max-width: 70%;
+    /* max-width: 70%; */
+    max-width: 60%;
+    text-wrap: balance;
 }
 
 .container h1, p {
@@ -529,7 +540,8 @@ header {
 }
 
 .social-side p {
-    width: 40%;
+    /* width: 40%; */
+    width: 50%;
     line-height: 3rem;
     margin-bottom: calc(var(--padding-sm) + 1rem);
 }
@@ -538,8 +550,9 @@ header {
     /* display: grid; */
     grid-template-rows: 1fr 1fr 1fr;
     gap: var(--padding-sm);
-    margin: var(--padding-sm) 0 calc(var(--padding-sm) + 1rem);
-    margin: var(--padding-sm) 0 var(--padding-md);
+    /* margin: var(--padding-sm) 0 calc(var(--padding-sm) + 1rem); */
+    margin: var(--padding-md) 0 calc(var(--padding-md) + 1rem);
+    /* margin: var(--padding-sm) 0 calc(var(--padding-md) + 1rem); */
 }
 
 .social-media a {
@@ -567,7 +580,8 @@ header {
 
 .social-side-image {
     position: relative;
-    width: 60%;
+    /* width: 60%; */
+    width: 65%;
     right: 8vw;
 }
 

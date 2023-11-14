@@ -3,7 +3,7 @@ function isMobile() {
 }
 
 function gridImageSize() {
-    $('.library-image').height($('.library-text-container').height()+60+"px")
+    $('.library-image').height($('.library-text-container').height()+80+"px")
     // $('.about-image-container').height($('.about-text-container').height())
     $('.about-image-container').height($('.about-text-container').height()+120+"px")
 
