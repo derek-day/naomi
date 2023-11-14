@@ -677,7 +677,7 @@ footer h2 {
     color: var(--background);
     /* font-family: "Garamond-Light"; */
     font-family: "Juana-Light";
-    font-size: 3rem;
+    font-size: 2.4rem;
     padding: 0.5rem 0;
     letter-spacing: 0.05rem;
 }
@@ -697,7 +697,7 @@ footer h2 {
 .footer-nav-image {
     position: relative;
     left: 0rem;
-    bottom: 16.5rem;
+    bottom: 15rem;
     z-index: 1;
 }
 
