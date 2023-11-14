@@ -10,7 +10,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-    <script src="jquery.js"></script>
+    <link rel="preload" as="image" href="assets/images/hero.png">
+    <script src="jquery.js" defer></script>
   </head>
 
     <body class="preload">
@@ -29,7 +30,7 @@
       <!-- <header></header> -->
       <header>
         <!-- <img class="header-desk" src="assets/images/header.png"> -->
-        <img class="header-desk" src="assets/images/hero3.png">
+        <img class="header-desk" src="assets/images/hero.png" alt="Angella holding Poetic Keepsake on a beach">
         <img class="header-mob" src="assets/images/headermob.png">
       </header>
 
@@ -51,7 +52,7 @@
         <div class="about-image-container">
         </div>
 
-        <img class="about-image-lap" src="assets/images/headshot.png">
+        <img class="about-image-lap" src="assets/images/headshot.png" alt="Black and white image of Angella">
 
         <img class="about-image-mob" src="assets/images/headshotlone.png">
 
@@ -78,7 +79,7 @@
           <h1 style="font-size:5.6rem;">Poetic Keepsake</h1>
           <h2 style="font-family:'Juana-ExtraLight-It';">2023</h2>
           </div>
-          <img class="library-image-mob" src="assets/images/book.png">
+          <img class="library-image-mob" src="assets/images/book.png" >
           <p class="library-p">Poetic Keepsake is a chapbook of 29 beautifully crafted poems. The self<span style="font-family:'Garamond-Regular';">-</span>published chapbook is a collection that portrays poetry with vivid imagery, inspiration, culture, and bliss. Do not hesitate to get your copy and make it your Poetic Keepsake<span style="font-family:'Garamond-Regular';">!</span></p>
           <p style="margin: 0 0 var(--padding-sm);" class="library-p">The book has three themed sections: Brazen, Art of Life, and Saint Lucia; Plas Kw<span style="font-family:'Satoshi-Regular';">é</span>y<span style="font-family:'Satoshi-Regular';">ò</span>l. Brazen features poems about freedom while the Art of Life features poems about life, love, and loss. The Saint Lucia; Plas Kw<span style="font-family:'Satoshi-Regular';">é</span>y<span style="font-family:'Satoshi-Regular';">ò</span>l includes 8 poems. Of these, 5 are written and performed in St. Lucian Creole, as the section captures St. Lucian culture in all its grandeur.</p>
           <!-- <p class="library-p">In her literary debut, "Tides of Time," Naomi Martinez transports readers on an enchanting voyage through the rich tapestry of her homeland. Born and raised in the sun-soaked embrace of Trinidad and Tobago, Martinez's deep connection to her roots is beautifully evident in the pages of her book. "Tides of Time" is a collection of short stories that unveils the multifaceted layers of Caribbean existence, weaving together tales of love, loss, resilience, and transformation. With each story, Rivera's lyrical prose captures the essence of the islands, evoking the rhythm of the waves and the whisper of trade winds. Her narratives breathe life into the vibrant characters who navigate the challenges of modernity while honoring age-old traditions.</p> -->
@@ -86,7 +87,7 @@
         </div>
 
 
-        <img class="library-image" src="assets/images/book.png">
+        <img class="library-image" src="assets/images/book.png" loading="lazy" alt="Image of Poetic Keepsake being held up on a beach">
 
         <!-- Image -->
         <!-- <div class="library-image-container">
@@ -103,11 +104,11 @@
 
         </div> -->
         
-        <img style="justify-self: center;margin: 2rem 0;" src="assets/images/logo.png">
+        <img style="justify-self: center;margin: 2rem 0;" src="assets/images/logo.png" loading="lazy" alt="Ella's Artistry logo">
 
         <div class="social-content">
           <h1 id="social-h1">Events</h1>
-          <img id="social-main" src="assets/images/mainsocial.png">
+          <img id="social-main" src="assets/images/mainsocial.png" loading="lazy">
           <div class="social-side">
             <p>As an event planner, Angella has curated Twilight Jamboree and Creole Kick Off. Twilight Jamboree launched in 2019, and annually features live bands and emerging talent from St. Lucia. It is usually held within the April to May Saint Lucia Jazz season. Creole Kick Off also commenced in 2019 to jumpstart the Creole Heritage celebration all month long in October.</p>
             <!-- <p>Follow me on social media to see the latest updates on new projects, book ideas, and behind-the-scenes content on how I bring my thoughts to life.</p> -->
@@ -120,7 +121,7 @@
 
               <div class="library-button"><a class="button" href="#top" style="line-height:4rem;position:relative;left:3rem;">See Gallery</a></div>
             </div>
-            <img class="social-side-image" src="assets/images/sidesocial.png">
+            <img class="social-side-image" src="assets/images/sidesocial.png" loading="lazy" alt="Image of a concert that Angella hosted">
           </div>
         </div>
       </section>
@@ -135,7 +136,7 @@
 
         <div style="display:grid;" class="">
           <h1 style="text-align: center;font-size: 7rem;margin:0.5rem 0 1rem;">See More</h1>
-          <img style="width:100%;" src="assets/images/mainsocial.png">
+          <img style="width:100%;" src="assets/images/mainsocial.png" alt="Image of Angella speaking at an event">
           
           <div style="margin:var(--padding-sm) 0;" class="">
             <p>Follow me on social media to see the latest updates on new projects, book ideas, and behind-the-scenes content on how I bring my thoughts to life.</p>
@@ -159,9 +160,9 @@
 
             <!-- Social image links -->
             <div class="footer-media">
-              <a href=""><img src="assets/images/facebook.png"></a>
+              <a href=""><img src="assets/images/facebook.png" loading="lazy" alt="Facebook link"></a>
               <!-- <a href=""><img src="assets/images/twitter.png"></a> -->
-              <a href=""><img src="assets/images/instagram.png"></a>
+              <a href=""><img src="assets/images/instagram.png" loading="lazy" alt="Instagram link"></a>
             </div>
 
             <div class="footer-nav">
@@ -173,12 +174,12 @@
               </ul>
             </div>
 
-            <img class="footer-nav-image" src="assets/images/sidefooter.jpg">
+            <img class="footer-nav-image" src="assets/images/sidefooter.jpg" loading="lazy" alt="Image of green leaves">
           </div>
 
           <div class="footer-right">
             <h2 style="position:relative;bottom: -1rem;">Artistry</h2>
-            <img class="footer-image" src="assets/images/mainfooter.png">
+            <img class="footer-image" src="assets/images/mainfooter.png" loading="lazy" alt="Image of Angella holding Poetic Keepsake in front of a blue gradient">
           </div>
         </div>
       </footer>
@@ -206,6 +207,6 @@
       <script>
         document.body.classList.remove('preload');
       </script>  
-      <script src="naomi.js"></script>
+      <script src="naomi.js" defer></script>
     </body>
 </html>

@@ -1,81 +1,55 @@
 @font-face {
-    font-family: "Bodoni-Light";
-    src: url('assets/fonts/Bodoni-Light.ttf') format("truetype");
-}
-
-@font-face {
-    font-family: "Bodoni-Regular";
-    src: url('assets/fonts/Bodoni-Regular.ttf') format("truetype");
-}
-
-@font-face {
-    font-family: "Bodoni-Medium";
-    src: url('assets/fonts/Bodoni-Medium.ttf') format("truetype");
-}
-
-@font-face {
-    font-family: "Bodoni-Semibold";
-    src: url('assets/fonts/Bodoni-Semibold.ttf') format("truetype");
-}
-
-@font-face {
-    font-family: "Bodoni-Bold";
-    src: url('assets/fonts/Bodoni-Bold.ttf') format("truetype");
-}
-
-@font-face {
-    font-family: "Bodoni-Extrabold";
-    src: url('assets/fonts/Bodoni-Extrabold.ttf') format("truetype");
-}
-
-@font-face {
-    font-family: "Bodoni-Heavy";
-    src: url('assets/fonts/Bodoni-Heavy.ttf') format("truetype");
-}
-
-@font-face {
     font-family: "Garamond-Light";
     src: url('assets/fonts/Garamond-Light.otf') format("opentype");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Garamond-Regular";
     src: url('assets/fonts/Garamond-Regular.ttf') format("truetype");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Satoshi-Light";
     src: url('assets/fonts/Satoshi-Light.otf') format("opentype");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Satoshi-Regular";
     src: url('assets/fonts/Satoshi-Regular.otf') format("opentype");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Juana-Light";
     src: url('assets/fonts/Juana-Light.otf') format("opentype");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Juana-Light-It";
     src: url('assets/fonts/Juana-Light-It.otf') format("opentype");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Juana-ExtraLight-It";
     src: url('assets/fonts/Juana-ExtraLight-It.otf') format("opentype");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Juana-Regular";
     src: url('assets/fonts/Juana-Regular.otf') format("opentype");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Juana-Regular-It";
     src: url('assets/fonts/Juana-Regular-It.otf') format("opentype");
+    font-display: swap;
 }
 
 
@@ -181,7 +155,8 @@ li {
 
 p {
     /* font-size: 1.6rem; */
-    font-size: 1.4rem;
+    /* font-size: 1.4rem; */
+    font-size: 1.5rem;
     /* font-family: 'Satoshi-Regular'; */
     font-family: 'Juana-Light';
     font-weight: normal;
@@ -233,7 +208,8 @@ nav li {
     font-weight: 300;
     line-height: normal;
     /* font-size: 1.7rem; */
-    font-size: 1.4rem;
+    /* font-size: 1.4rem; */
+    font-size: 1.5rem;
 }
 
 nav li a {
@@ -395,6 +371,9 @@ header {
     background-size: contain;
     width: 100%;
     height: 100%;
+
+    /* width: 500px; */
+    /* height: 500px; */
 }
 
 .about-image { 
