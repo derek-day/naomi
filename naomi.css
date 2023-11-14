@@ -675,7 +675,8 @@ footer h2 {
 .footer-nav li {
     list-style-type: none;
     color: var(--background);
-    font-family: "Garamond-Light";
+    /* font-family: "Garamond-Light"; */
+    font-family: "Juana-Light";
     font-size: 3rem;
     padding: 0.5rem 0;
     letter-spacing: 0.05rem;
