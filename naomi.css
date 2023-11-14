@@ -516,7 +516,7 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     position: relative;
-    left: 3.5rem;
+    /* left: 3.5rem; */
 }
 
 .social-content h1 {
