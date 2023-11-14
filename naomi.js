@@ -3,8 +3,9 @@ function isMobile() {
 }
 
 function gridImageSize() {
-    $('.library-image').height($('.library-text-container').height()+125+"px")
-    $('.about-image-container').height($('.about-text-container').height())
+    $('.library-image').height($('.library-text-container').height()+60+"px")
+    // $('.about-image-container').height($('.about-text-container').height())
+    $('.about-image-container').height($('.about-text-container').height()+60+"px")
 
     $(".library-text-header").width($(".library-p").width())
     $(".library-button").width($(".library-p").width())
