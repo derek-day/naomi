@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <meta name="theme-color" content="#FFFCF4">
+    <title>Connect - Ella's Artistry</title>
+    <link rel="stylesheet" href="naomi.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="preload" as="image" href="assets/images/hero.webp">
+    <link rel="preload" as="image" href="assets/images/headermob.webp">
+    <link rel="preload" as="font" href="assets/fonts/Garamond-Light.otf" type="font/otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="assets/fonts/Garamond-Regular.ttf" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="assets/fonts/Satoshi-Light.otf" type="font/otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="assets/fonts/Satoshi-Regular.otf" type="font/otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="assets/fonts/Juana-Light.otf" type="font/otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="assets/fonts/Juana-Regular.otf" type="font/otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="assets/fonts/Juana-Light-It.otf" type="font/otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="assets/fonts/Juana-ExtraLight-It.otf" type="font/otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="assets/fonts/Juana-Regular-It.otf" type="font/otf" crossorigin="anonymous">
+
+    <script src="jquery.js" defer></script>
+  </head>
+
+    <body class="preload">
+
+      <nav id="nav">
+        <h1><a href="#top">Ella<span style="font-family:'Garamond-Regular';">'</span>s Artistry</a></h1>
+        <ul>
+          <li><a href="naomi.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="#top">Connect</a></li>
+        </ul>
+      </nav>
+
+      <main>
+
+      <!-- Vine background -->
+      <section id="background" class="background">
+      </section>
+
+      <!-- Mobile vine background -->
+      <section id="background-mob" class="background">
+      </section>      
+      
+
+
+      </main>
+
+      <footer>
+        <div class="footer-grid">
+          <div class="footer-left" style="bottom: -2rem;">
+            <h2 style="position: relative;left: 2rem;">Ella<span style="font-family:'Garamond-Regular';">'</span>s</h2>
+
+            <!-- Social image links -->
+            <div class="footer-media">
+              <a href=""><img src="assets/images/facebook.png" loading="lazy" alt="Facebook link"></a>
+              <!-- <a href=""><img src="assets/images/twitter.png"></a> -->
+              <a href=""><img src="assets/images/instagram.png" loading="lazy" alt="Instagram link"></a>
+            </div>
+
+            <div class="footer-nav">
+              <ul>
+                <li><a href="naomi.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="#top">Connect</a></li>
+              </ul>
+            </div>
+
+            <img class="footer-nav-image" src="assets/images/sidefooter.jpg" loading="lazy" alt="Image of green leaves">
+          </div>
+
+          <div class="footer-right">
+            <h2 style="position:relative;bottom: -1rem;">Artistry</h2>
+            <img class="footer-image" src="assets/images/mainfooter.png" loading="lazy" alt="Image of Angella holding Poetic Keepsake in front of a blue gradient">
+          </div>
+        </div>
+      </footer>
+
+      <section id="footer-mob" style="background-color: #8E5438;margin-top:5rem;">
+        <div style="padding: 3rem 0 0;" class="">
+          <div class="">
+            <h2 style="color:var(--background);font-family:'Juana-Light';font-size: 3.6rem; text-transform:uppercase;text-align:center">Ella<span style="font-family:'Garamond-Light';">'</span>s Artistry</h2>        
+
+            <div class="">
+              <ul style="display:grid;grid-template-columns: 1fr 1fr 1fr 1fr;list-style-type: none;padding: 0.5rem 0 1rem;letter-spacing: 0.05rem;place-items:center;gap:2rem;">
+                <li><a style="color: var(--background);font-family: 'Juana-Light';font-size: 1.8rem;text-decoration: none;" href="naomi.html">Home</a></li>
+                <li><a style="color: var(--background);font-family: 'Juana-Light';font-size: 1.8rem;text-decoration: none;" href="shop.html">Shop</a></li>
+                <li><a style="color: var(--background);font-family: 'Juana-Light';font-size: 1.8rem;text-decoration: none;" href="gallery.html">Gallery</a></li>
+                <li><a style="color: var(--background);font-family: 'Juana-Light';font-size: 1.8rem;text-decoration: none;" href="#top">Connect</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <img class="" style="width:100%;margin-bottom: 3rem;" src="assets/images/mainfooter.png" loading="lazy" alt="Image of Angella holding Poetic Keepsake in front of a blue gradient">
+        </div>
+      </section>
+      </footer>
+
+
+      <script>
+        document.body.classList.remove('preload');
+      </script>  
+      <script src="naomi.js" defer></script>
+    </body>
+</html>
