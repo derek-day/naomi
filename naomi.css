@@ -746,8 +746,8 @@ footer h2 {
     overflow: auto;
     background-repeat:no-repeat;
     background-size:contain;
-    -webkit-animation: vibrate2 15s cubic-bezier(.36, .07, .19, .97) infinite;
-    animation: vibrate2 15s cubic-bezier(.36, .07, .19, .97) infinite;
+    -webkit-animation: vibrate2 25s cubic-bezier(.36, .07, .19, .97) infinite;
+    animation: vibrate2 25s cubic-bezier(.36, .07, .19, .97) infinite;
     touch-action: none;
     opacity: 1;
     mix-blend-mode: multiply;
@@ -777,7 +777,7 @@ footer h2 {
 }
 
 #shop hr {
-    max-width:70%;
+    max-width: 80%;
 }
 
 .shop-image-container {
@@ -856,7 +856,8 @@ footer h2 {
 
 @media screen and (max-width: 1530px) {
     #library {
-        gap: 10rem;
+        /* gap: 10rem; */
+        gap: 4rem;
     }
 
     .social-content {
