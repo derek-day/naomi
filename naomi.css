@@ -940,6 +940,7 @@ footer h2 {
         display: block;
         width: 75% !important;
         place-self: center;
+        margin: 1rem 0;
     }
 
     .library-text-container {
