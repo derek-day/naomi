@@ -909,6 +909,21 @@ footer h2 {
     opacity: 1 !important;
 }
 
+/* CONNECT */
+#connect {
+    display: block;
+}
+
+.connect {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.connect-media {
+    position: relative;
+    place-self: center;
+}
+
 @media screen and (max-width: 1800px) {
     .container h1, p {
         max-width: 80%;
