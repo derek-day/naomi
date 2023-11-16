@@ -537,6 +537,7 @@ header {
     grid-template-columns: 1fr 1fr 1fr;
     position: relative;
     /* left: 3.5rem; */
+    margin-top: 10rem;
 }
 
 .social-content h1 {
