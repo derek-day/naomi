@@ -177,6 +177,13 @@ nav.scrolled {
     backdrop-filter: blur(1.6rem);
 }
 
+.nav-logo {
+    /* margin: 0 auto; */
+    margin: 1.25rem auto 1.75rem;
+    display: block;
+    width: 7rem;
+}
+
 nav h1 {
     text-transform: uppercase;
     /* font-family: 'Garamond-Regular'; */
@@ -831,6 +838,76 @@ footer h2 {
     display: none;
 }
 
+.accent {
+    font-size: 1.8rem;
+    color: #4a4a4a;
+}
+
+/* GALLERY */
+#gallery {
+    display: block;
+}
+
+#gallery h1:last-of-type {
+    margin-top: 12rem;;
+}
+
+#gallery h2 {
+    font-size: 2.4rem;
+}
+
+#gallery span {
+    font-size: 7.5rem;
+}
+
+#gallery a:hover,
+#gallery a:focus,
+#gallery a:focus-within {
+    background-color: transparent;
+    color: transparent;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.gallery img {
+    max-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+    height: 35vh;
+    flex-grow: 1;
+}
+
+.gallery img:nth-child(2) {
+    height: 50vh;
+}
+
+.gallery a:last-child {
+    flex-grow: 10;
+}  
+
+.example-image {
+    width: 50%;
+    /* height: 200px; */
+}
+
+.demo {
+    /* width: 50%; */
+}
+
+.lb-nav a.lb-next {
+    opacity: 1 !important;
+}
+
+.lb-nav a.lb-prev {
+    opacity: 1 !important;
+}
+
 @media screen and (max-width: 1800px) {
     .container h1, p {
         max-width: 80%;
@@ -1133,6 +1210,10 @@ footer h2 {
         font-size: 2.1rem;
     }
 
+    #shop p {
+        margin-bottom: 0;
+    }
+
     .shop-image-container {
         display: none;
     }
@@ -1157,6 +1238,32 @@ footer h2 {
 
     .shop-purchase a {
         line-height: 4rem;
+    }
+
+    .gallery img {
+        height: 25vh;
+    }
+
+    .gallery {
+        flex-direction: column;
+    }
+
+    #gallery h1 {
+        font-size: 3.3rem;
+        text-align: center;
+    }
+
+    #gallery h1:last-of-type {
+        margin-top: 6rem;
+    }
+
+    #gallery h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    #gallery span {
+        font-size: 4rem;
     }
 }
 
