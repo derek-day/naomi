@@ -868,6 +868,19 @@ footer h2 {
     color: transparent;
 }
 
+.img-hover-zoom {
+    height: 300px; /* [1.1] Set it as per your need */
+    overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+
+.img-hover-zoom img {
+    transition: transform .5s ease;
+}  
+
+.img-hover-zoom:hover img {
+    transform: scale(1.1);
+}  
+
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -891,7 +904,7 @@ footer h2 {
 .gallery img:hover,
 .gallery img:focus,
 .gallery img:active {
-    transform: scale(1.05);
+    /* transform: scale(1.05); */
 }
 
 .gallery a:last-child {
