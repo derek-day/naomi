@@ -987,7 +987,7 @@ footer h2 {
     position: relative;
     place-self: center;
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .connect-media a {
@@ -1003,7 +1003,7 @@ footer h2 {
 }
 
 .connect-media img {
-    width: 4rem;
+    width: 5rem;
     position: relative;
     right: 1rem;
 }
@@ -1030,7 +1030,8 @@ footer h2 {
 }
 
 .connect-logo {
-    width: 20rem;
+    /* width: 20rem; */
+    width: 40rem;
 }
 
 .social-contact {
@@ -1590,13 +1591,13 @@ footer h2 {
     }
 
     .connect-logo {
-        width: 50% !important;
+        /* width: 50% !important; */
         margin: 0 auto;
         display: block;
     }
 
     .connect-media img {
-        width: 4rem !important;
+        width: 5rem !important;
         margin-top: 0.5rem;
     }
 
