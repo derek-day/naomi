@@ -1774,10 +1774,6 @@ tr.calendar-body .calendar-day .day.calendar-today {
     nav ul {
         gap: var(--padding-sm);
     }
-
-    #events {
-        overflow-x: hidden;
-    }
 }
 
 @media screen and (max-width: 500px) {
