@@ -53,8 +53,30 @@
       
 
         <section class="container" id="events">
-            <h1 style="text-align: center;margin-bottom: 4rem;max-width:100% !important;">Events</h1>
+            <h1 style="text-align: center;margin-bottom: 4rem;max-width:100% !important;">Events Option 1</h1>
             <div id="evoCalendar"></div>
+        </section>
+
+        <section class="container" id="events2" style="display:block;">
+          <h1 style="text-align: center;margin-bottom: 4rem;max-width:100% !important;">Events Option 2</h1>
+          <div class="event2">
+            <h2 style="font-family:'Juana-Light';">St. Lucia Literary Festival</h2>
+            <h3 style="font-family:'Juana-Light';margin:0.5rem 0;color:#3c3c3c;">Friday <span style="font-family:'Garamond-Light';">|</span> November 17th</h3>
+            <h4 style="margin:0.75rem 0 4rem;font-family:'Juana-Light-It';color:#3c3c3c;">2pm<span style="font-family:'Garamond-Light';font-style: italic;"> - </span>5pm</h4>
+            <hr style="background-color: #e2e2e2;height:1px;border:none;">
+          </div>
+          <div class="event2">
+            <h2 style="font-family:'Juana-Light';">St. Lucia Jazz Festival</h2>
+            <h3 style="font-family:'Juana-Light';margin:0.5rem 0;color:#3c3c3c;">Monday <span style="font-family:'Garamond-Light';">|</span> November 20th</h3>
+            <h4 style="margin:0.75rem 0 4rem;font-family:'Juana-Light-It';color:#3c3c3c;">12pm<span style="font-family:'Garamond-Light';font-style: italic;"> - </span>8pm</h4>
+            <hr style="background-color: #e2e2e2;height:1px;border:none;">
+          </div>
+          <div class="event2">
+            <h2 style="font-family:'Juana-Light';">Open Mic Night</h2>
+            <h3 style="font-family:'Juana-Light';margin:0.5rem 0;color:#3c3c3c;">Tuesday <span style="font-family:'Garamond-Light';">|</span> November 28th</h3>
+            <h4 style="margin:0.75rem 0 4rem;font-family:'Juana-Light-It';color:#3c3c3c;">8pm<span style="font-family:'Garamond-Light';font-style: italic;"> - </span>11pm</h4>
+            <hr style="background-color: #e2e2e2;height:1px;border:none;">
+          </div>
         </section>
 
       </main>
@@ -62,7 +84,7 @@
       <footer>
         <div class="footer-grid">
           <div class="footer-left" style="bottom: -2rem;">
-            <h2 style="position: relative;left: 2rem;">Ella<span style="font-family:'Garamond-Regular';">'</span>s</h2>
+            <h2 style="position: relative;left: 2rem;bottom:-0.25rem;">Ella<span style="font-family:'Garamond-Regular';">'</span>s</h2>
 
             <div class="footer-media">
               <a href="https://www.facebook.com/ellathepoet/" target="_blank"><img src="assets/images/facebook.png" loading="lazy" alt="Facebook link"></a>
@@ -83,9 +105,10 @@
           </div>
 
           <div class="footer-right">
-            <h2 style="position:relative;bottom: -1rem;"><span style="background-color: rgba(142, 84, 56, 0.8);">Artistry</span></h2>
-            <!-- <img class="footer-image" src="assets/images/mainfooter.png" loading="lazy" alt="Image of Angella holding Poetic Keepsake in front of a blue gradient"> -->
-            <img class="footer-image" style="width: 30rem;" src="assets/images/mainsocial.jpeg" loading="lazy" alt="Image of Angella holding Poetic Keepsake in front of a blue gradient">
+            <h2 style="position:relative;bottom: -1rem;">Artistry</h2>
+            <img class="footer-image" src="assets/images/mainfooter.png" loading="lazy" alt="Image of Angella holding Poetic Keepsake in front of a blue gradient">
+            <!-- <h2 style="position:relative;bottom: -1rem;"><span style="background-color: rgba(142, 84, 56, 0.8);">Artistry</span></h2> -->
+            <!-- <img class="footer-image" style="width: 30rem;" src="assets/images/mainsocial.jpeg" loading="lazy" alt="Image of Angella holding Poetic Keepsake in front of a blue gradient"> -->
           </div>
         </div>
       </footer>
@@ -124,9 +147,9 @@
             eventListToggler: true,
             canAddEvent: false,
             calendarEvents: [
-                { name: "Speaking", date: "Fri Nov 17 2023 00:00:00 GMT-0800 (Pacific Standard Time)", description:"St. Lucia Literary Festival", time:"2pm-5pm", type: "event", id: "1" },
-                { name: "Attending", date: "Mon Nov 20 2023 00:00:00 GMT-0800 (Pacific Standard Time)", description:"St. Lucia Jazz Festival", time:"12pm-8pm", type: "event", id: "2" },
-                { name: "Viewing", date: "Tue Nov 28 2023 00:00:00 GMT-0800 (Pacific Standard Time)", description:"Open Mic Night", time:"8pm-11pm", type: "event", id: "3" }
+                { name: "Event 1", date: "Fri Nov 17 2023 00:00:00 GMT-0800 (Pacific Standard Time)", description:"St. Lucia Literary Festival", time:"2pm-5pm", type: "event", id: "1" },
+                { name: "Event 2", date: "Mon Nov 20 2023 00:00:00 GMT-0800 (Pacific Standard Time)", description:"St. Lucia Jazz Festival", time:"12pm-8pm", type: "event", id: "2" },
+                { name: "Event 3", date: "Tue Nov 28 2023 00:00:00 GMT-0800 (Pacific Standard Time)", description:"Open Mic Night", time:"8pm-11pm", type: "event", id: "3" }
             ],
             onSelectDate: function() {
                 // console.log('onSelectDate!')

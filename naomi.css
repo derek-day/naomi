@@ -691,7 +691,8 @@ footer h2 {
     color: var(--background);
     /* font-family: "Garamond-Light"; */
     font-family: "Juana-Light";
-    font-size: 2.4rem;
+    /* font-size: 2.4rem; */
+    font-size: 2rem;
     padding: 0.5rem 0;
     letter-spacing: 0.05rem;
 }
@@ -711,7 +712,7 @@ footer h2 {
 .footer-nav-image {
     position: relative;
     left: 0rem;
-    bottom: 16rem;
+    bottom: 16.5rem;
     z-index: 1;
 }
 
@@ -1362,6 +1363,23 @@ tr.calendar-body .calendar-day .day.calendar-today {
     background-color: #8E5438 !important;
 }
 
+.event2 {
+    width:50%;
+    margin:3rem auto;
+}
+
+.event2 h2 {
+    font-size: 3.6rem;
+}
+
+.event2 h3 {
+    font-size: 2.4rem;
+}
+
+.event2 h4 {
+    font-size: 2rem;
+}
+
 @media screen and (max-width: 1800px) {
     .container h1, p {
         max-width: 80%;
@@ -1773,6 +1791,22 @@ tr.calendar-body .calendar-day .day.calendar-today {
 
     nav ul {
         gap: var(--padding-sm);
+    }
+
+    .event2 {
+        width: 100%;
+    }
+
+    .event2 h2 {
+        font-size: 3rem;
+    }
+
+    .event2 h3 {
+        font-size: 2rem;
+    }
+
+    .event2 h4 {
+        font-size: 1.8rem;
     }
 }
 
