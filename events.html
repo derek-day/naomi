@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <meta name="theme-color" content="#FFFCF4">
-    <title>Shop - Ella's Artistry</title>
+    <title>Events - Ella's Artistry</title>
     <link rel="stylesheet" href="naomi.css">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
@@ -21,7 +21,10 @@
     <link rel="preload" as="font" href="assets/fonts/Juana-Light-It.otf" type="font/otf" crossorigin="anonymous">
     <link rel="preload" as="font" href="assets/fonts/Juana-ExtraLight-It.otf" type="font/otf" crossorigin="anonymous">
     <link rel="preload" as="font" href="assets/fonts/Juana-Regular-It.otf" type="font/otf" crossorigin="anonymous">
-    <script src="jquery.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="evo-calendar.css">
+    <link rel="stylesheet" href="evo-calendar.midnight-blue.css">
+    <link rel="stylesheet" href="evo-calendar.orange-coral.css">
+    <link rel="stylesheet" href="evo-calendar.royal-navy.css">
   </head>
 
     <body class="preload">
@@ -31,9 +34,9 @@
         <!-- <h1><a href="#top">Ella<span style="font-family:'Garamond-Regular';">'</span>s Artistry</a></h1> -->
         <ul>
           <li><a href="naomi.html">Home</a></li>
-          <li><a href="#top">Shop</a></li>
+          <li><a href="shop.html">Shop</a></li>
           <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="events.html">Events</a></li>
+          <li><a href="#top">Events</a></li>
           <li><a href="connect.html">Connect</a></li>
         </ul>
       </nav>
@@ -48,33 +51,11 @@
       <section id="shop-background-mob" class="background">
       </section>      
       
-      <section class="container" id="shop">
-        <div class="shop-image-container">
-        </div>
 
-        <img class="shop-image-mob" src="assets/images/shopbook.png" alt="Black and white image of Angella">
-
-        <div class="shop-text-container">
-            <div class="shop-description">
-                <h1 style="max-width:100%;">Poetic Keepsake</h1>
-                <p style="">Poetic Keepsake is a chapbook of 29 beautifully crafted poems. The self<span style="font-family:'Garamond-Regular';">-</span>published chapbook is a collection that portrays poetry with vivid imagery, inspiration, culture, and bliss. Do not hesitate to get your copy and make it your Poetic Keepsake<span style="font-family:'Satoshi-Regular';">!</span></p>
-                <p style="">The book has three themed sections: Brazen, Art of Life, and Saint Lucia; Plas Kw<span class="accent">é</span>y<span class="accent">ò</span>l. Brazen features poems about freedom while the Art of Life features poems about life, love, and loss. The Saint Lucia; Plas Kw<span class="accent">é</span>y<span class="accent">ò</span>l includes 8 poems. Of these, 5 are written and performed in St. Lucian Creole, as the section captures St. Lucian culture in all its grandeur.</p>
-            </div>
-            <hr style="margin-top: 2.5rem;margin-left:0;background-color:#e2e2e2;height:1px;border:none;">
-            <div class="shop-detail">
-                <h2 style="max-width:100%;font-family:'Juana-Regular';">Details</h2>
-                <p><span style="font-family:'Garamond-Regular';">-</span> Over two dozen poems</p>
-                <p><span style="font-family:'Garamond-Regular';">-</span> Available in paperback cover</p>
-                <p><span style="font-family:'Garamond-Regular';">-</span> Three themed sections, including five poems written in St. Lucian Creole</p>
-            </div>
-            <hr style="margin-bottom: 2.5rem;margin-left:0;background-color:#e2e2e2;height:1px;border:none;">
-            <div class="shop-purchase">
-                <h2 style="font-family:'Juana-Regular';">Buy <span style="font-family:'Juana-Regular-It';">Poetic Keepsake</span> on Amazon</h2>
-                <div style="display: flex;"><a class="button" style="padding:0 3rem;margin: 1rem 0;" href="#top" target="_blank">Buy</a></div>
-            </div>
-        </div>
-      </section>
-
+        <section class="container" id="events">
+            <h1 style="text-align: center;margin-bottom: 4rem;max-width:100% !important;">Events</h1>
+            <div id="evoCalendar"></div>
+        </section>
 
       </main>
 
@@ -91,9 +72,9 @@
             <div class="footer-nav">
               <ul>
                 <li><a href="naomi.html">Home</a></li>
-                <li><a href="#top">Shop</a></li>
+                <li><a href="shop.html">Shop</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="events.html">Events</a></li>
+                <li><a href="#top">Events</a></li>
                 <li><a href="connect.html">Connect</a></li>
               </ul>
             </div>
@@ -117,9 +98,9 @@
             <div class="">
               <ul style="display:grid;grid-template-columns: 1fr 1fr 1fr 1fr 1fr;list-style-type: none;padding: 0.5rem 0 1rem;letter-spacing: 0.05rem;place-items:center;gap:2rem;">
                 <li><a style="color: var(--background);font-family: 'Juana-Light';font-size: 1.5rem;text-decoration: none;" href="naomi.html">Home</a></li>
-                <li><a style="color: var(--background);font-family: 'Juana-Light';font-size: 1.5rem;text-decoration: none;" href="#top">Shop</a></li>
+                <li><a style="color: var(--background);font-family: 'Juana-Light';font-size: 1.5rem;text-decoration: none;" href="shop.html">Shop</a></li>
                 <li><a style="color: var(--background);font-family: 'Juana-Light';font-size: 1.5rem;text-decoration: none;" href="gallery.html">Gallery</a></li>
-                <li><a style="color: var(--background);font-family: 'Juana-Light';font-size: 1.5rem;text-decoration: none;" href="events.html">Events</a></li>
+                <li><a style="color: var(--background);font-family: 'Juana-Light';font-size: 1.5rem;text-decoration: none;" href="#top">Events</a></li>
                 <li><a style="color: var(--background);font-family: 'Juana-Light';font-size: 1.5rem;text-decoration: none;" href="connect.html">Connect</a></li>
               </ul>
             </div>
@@ -133,6 +114,29 @@
 
       <script>
         document.body.classList.remove('preload');
+      </script>
+      <script src="jquery.js"></script>
+      <script src="evo-calendar.js"></script>
+      <script>
+        $('#evoCalendar').evoCalendar({
+            todayHighlight: true,
+            sidebarToggler: true,
+            eventListToggler: true,
+            canAddEvent: false,
+            calendarEvents: [
+                { name: "Speaking", description:"St. Lucia Literary Festival", time:"2pm-5pm", date: "November/17/2023", type: "event" },
+                { name: "Attending", description:"St. Lucia Jazz Festival", time:"12pm-8pm", date: "November/20/2023", type: "event" },
+                { name: "Viewing", description:"Open Mic Night", time:"8pm-11pm", date: "November/29/2023", type: "event" }
+            ],
+            onSelectDate: function() {
+                // console.log('onSelectDate!')
+            },
+            onAddEvent: function() {
+                console.log('onAddEvent!')
+            }
+        });
+        // $("#evoCalendar").evoCalendar('addCalendarEvent', [...]);
+    
       </script>  
       <script src="naomi.js" defer></script>
     </body>
