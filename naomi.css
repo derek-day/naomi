@@ -620,7 +620,8 @@ footer h2 {
     /* font-family: "Garamond-Light"; */
     font-family: 'Juana-Regular';
     /* font-size: 6.2rem; */
-    font-size: 5.6rem;
+    /* font-size: 5.6rem; */
+    font-size: 5rem;
     text-transform: uppercase;
 }
 
@@ -654,7 +655,7 @@ footer h2 {
     position: relative;
     place-self: center;
     /* bottom: 2rem; */
-    bottom: 0;
+    bottom: -1.5rem;
     left: -4rem;
 }
 
@@ -750,7 +751,7 @@ footer h2 {
     user-select: none;
     background-image: url("assets/images/vine.png");
     width: 100%;
-    height: 1600px;
+    height: 1400px;
     position: absolute;
     overflow: auto;
     background-repeat:no-repeat;
@@ -934,7 +935,7 @@ footer h2 {
     user-select: none;
     background-image: url("assets/images/vine.png");
     width: 100%;
-    height: 1600px;
+    height: 1400px;
     position: absolute;
     overflow: auto;
     background-repeat:no-repeat;
@@ -1218,7 +1219,7 @@ footer h2 {
     user-select: none;
     background-image: url("assets/images/vine.png");
     width: 100%;
-    height: 1600px;
+    height: 1400px;
     position: absolute;
     overflow: auto;
     background-repeat:no-repeat;
