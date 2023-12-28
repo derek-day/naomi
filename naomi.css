@@ -841,6 +841,46 @@ footer h2 {
     display: none;
 }
 
+.poem-container {
+    z-index: 1;
+    display: grid;
+    position: relative;
+    gap: 4rem;
+    /* gap: 2rem; */
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    /* align-items: center; */
+    grid-template-columns: 1fr 1fr;
+    /* margin: 8.5rem 0; */
+    /* margin: 10rem 0; */
+    padding: 6rem 0;
+}
+
+/* .poem h2+p:first-letter {
+    float: left;
+    font-size: 40px;
+    margin: 12px 5px 0px 0px;
+}   */
+
+.poem p:first-line {
+    font-variant: small-caps;
+    letter-spacing: 1px;
+}
+
+.poem p:last-child {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+
+.poem p {
+    max-width:100%;
+}
+
+.poem h2 {
+    margin: 0 0 1rem;
+}
+
 .accent {
     font-size: 1.8rem;
     color: #4a4a4a;
@@ -935,7 +975,8 @@ footer h2 {
     user-select: none;
     background-image: url("assets/images/vine.png");
     width: 100%;
-    height: 1400px;
+    /* height: 1400px; */
+    height: 2200px;
     position: absolute;
     overflow: auto;
     background-repeat:no-repeat;
@@ -954,7 +995,8 @@ footer h2 {
     user-select: none;
     background-image: url("assets/images/vine-mob.png");
     width: 100%;
-    height: 1700px;
+    /* height: 1700px; */
+    height: 2800px;
     position: absolute;
     overflow: auto;
     background-repeat:no-repeat;
@@ -1381,6 +1423,21 @@ tr.calendar-body .calendar-day .day.calendar-today {
     font-size: 2rem;
 }
 
+.featured {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.featured-h1 {
+    max-width: 100%;
+}
+
+.featured-p {
+    max-width: 100%;
+    margin: 0;
+}
+
 @media screen and (max-width: 1800px) {
     .container h1, p {
         max-width: 80%;
@@ -1653,6 +1710,27 @@ tr.calendar-body .calendar-day .day.calendar-today {
 
     .library-p {
         max-width: 100%;
+    }
+
+    .poem-container {
+        display: block;
+        padding: 4rem 0;
+    }
+
+    .featured {
+        display: block !important;
+        padding: 0 10%;
+        right: 0;
+        left: 0;
+    }
+
+    .featured-h1 {
+        font-size: 4rem;
+    }
+
+    .featured-p {
+        max-width: 100%;
+        margin: 1rem 0;
     }
 
     #social {
