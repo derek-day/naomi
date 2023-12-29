@@ -1439,6 +1439,14 @@ tr.calendar-body .calendar-day .day.calendar-today {
     margin: 0;
 }
 
+.shop-header-desk {
+    /* display: none; */
+}
+
+.shop-header-mob {
+    display: none;
+}
+
 @media screen and (max-width: 1800px) {
     .container h1, p {
         max-width: 80%;
@@ -1580,6 +1588,14 @@ tr.calendar-body .calendar-day .day.calendar-today {
     }
 
     #shop-background-mob {
+        display: block;
+    }
+
+    .shop-header-desk {
+        display: none;
+    }
+
+    .shop-header-mob {
         display: block;
     }
 
