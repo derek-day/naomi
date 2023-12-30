@@ -1910,7 +1910,7 @@ tr.calendar-body .calendar-day .day.calendar-today {
 
     #social-mob {
         display: block;
-        padding: 0 10%;
+        padding: 0 10% 4rem;
     }
 
     footer {
