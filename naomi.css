@@ -178,8 +178,8 @@ nav.scrolled {
 }
 
 .nav-logo {
-    /* margin: 0 auto; */
-    margin: 1.25rem auto 1.75rem;
+    /* margin: 1.25rem auto 1.75rem; */
+    margin: 2rem auto 1.75rem;
     display: block;
     width: 7rem;
 }
@@ -215,10 +215,14 @@ nav ul {
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    gap: var(--padding-md);
+    /* gap: var(--padding-md); */
+    gap: 6rem;
     list-style-type: none;
-    padding-inline-start: 0;
-    margin: calc(var(--padding-sm) - 1rem) 0 var(--padding-sm);
+    /* padding-inline-start: 0; */
+    /* margin: calc(var(--padding-sm) - 1rem) 0 var(--padding-sm); */
+    margin: 2.25rem 0;
+    right: 0.5rem;
+    position: relative;
 }
 
 nav li {
@@ -246,7 +250,7 @@ nav li a:focus-within {
 }
 
 main {
-    padding-top: 12rem;
+    padding-top: 13.5rem;
 }
 
 header {
@@ -1583,6 +1587,16 @@ tr.calendar-body .calendar-day .day.calendar-today {
 
 /* @media screen and (max-width: 500px) { */
 @media screen and (max-width: 800px) {
+    nav ul {
+        padding-inline-start: 0;
+        right: 0;
+    }
+
+    .nav-logo {
+        right: 1.5rem;
+        position: relative;
+    }
+
     #background {
         display: none;
     }
