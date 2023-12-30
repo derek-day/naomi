@@ -183,12 +183,24 @@ nav.scrolled {
     display: block;
     width: 7rem;
 
+    animation:none;
+    opacity:1;
+}
+
+.home-logo{
     transition: fill 600ms cubic-bezier(0.215, 0.61, 0.355, 1),opacity 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
     opacity: 0;
     transform: translateY(2rem);
     animation: returnToOrigin 0.3s ease-out forwards;
-    /* animation-delay: 0.5s; */
     animation-delay: 0.25s;
+}
+
+.home-nav {
+    transition: fill 600ms cubic-bezier(0.215, 0.61, 0.355, 1),opacity 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    opacity: 0;
+    transform: translateY(2rem);
+    animation: returnToOrigin 0.3s ease-out forwards;
+    animation-delay: 0.5s;
 }
 
 @keyframes returnToOrigin {
@@ -238,11 +250,8 @@ nav ul {
     right: 0.4rem;
     position: relative;
 
-    transition: fill 600ms cubic-bezier(0.215, 0.61, 0.355, 1),opacity 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
-    opacity: 0;
-    transform: translateY(2rem);
-    animation: returnToOrigin 0.3s ease-out forwards;
-    animation-delay: 0.5s;
+    animation: none;
+    opacity: 1;
 }
 
 nav li {
