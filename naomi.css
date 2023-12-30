@@ -472,6 +472,7 @@ header {
     height: fit-content;
     z-index: -1;
     filter: blur(0.85px);
+    rotate: -150deg;
 }
 
 .library-image-container {
