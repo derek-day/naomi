@@ -618,13 +618,15 @@ header {
 }
 
 .social-back {
-    right: 68rem;
+    right: 75rem;
     top: 10rem;
     position: absolute;
-    width: 45%;
+    /* width: 45%; */
+    width: 40%;
     height: fit-content;
     z-index: -1;
     filter: blur(0.35px);
+    rotate: 220deg;
 }
 
 .social-side {
