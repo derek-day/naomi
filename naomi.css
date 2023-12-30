@@ -393,7 +393,8 @@ header {
 .about-image-container {
     display: grid;
     position: relative;
-    background: url("assets/images/headshot2.png") no-repeat;
+    /* background: url("assets/images/headshot2.png") no-repeat; */
+    background: url("assets/images/headshotlone4.png") no-repeat;
     background-position: right;
     background-size: contain;
     width: 100%;
@@ -434,6 +435,15 @@ header {
     text-wrap: balance;
 }
 
+.about-back {
+    right: 20rem;
+    top: 16rem;
+    position: absolute;
+    width: 55%;
+    height: fit-content;
+    z-index: -1;
+}
+
 .library-image-container {
     display: grid;
     position: relative;
@@ -453,6 +463,15 @@ header {
 
 .library-image-mob {
     display: none;
+}
+
+.library-back {
+    left: 42%;
+    top: 42%;
+    position: absolute;
+    width: 36%;
+    height: fit-content;
+    z-index: -1;
 }
 
 .library-text-container {
@@ -565,6 +584,15 @@ header {
 #social-main {
     width: 100%;
     min-width: 300px;
+}
+
+.social-back {
+    right: 55rem;
+    top: 10rem;
+    position: absolute;
+    width: 45%;
+    height: fit-content;
+    z-index: -1;
 }
 
 .social-side {
@@ -1583,6 +1611,17 @@ tr.calendar-body .calendar-day .day.calendar-today {
     .library-text-container {
         justify-items: normal;
     }
+
+    .social-back {
+        width:40%;
+        right:45rem;
+    }
+
+    .about-back {
+        top: 26rem;
+        right: 16rem;
+        width: 65%;
+    }
 }
 
 /* @media screen and (max-width: 500px) { */
@@ -1607,6 +1646,7 @@ tr.calendar-body .calendar-day .day.calendar-today {
 
     .about-header-mob {
         display: block;
+        text-align: center;
     }
     
     .about-header-desk {
@@ -1657,6 +1697,10 @@ tr.calendar-body .calendar-day .day.calendar-today {
 
     .header-mob {
         display: block;
+    }
+
+    .library-back {
+        display: none;
     }
 
     .container {
