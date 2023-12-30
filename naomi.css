@@ -1824,7 +1824,7 @@ tr.calendar-body .calendar-day .day.calendar-today {
 
     #library {
         left: 0;
-        margin: -4rem 0 8rem;
+        /* margin: -4rem 0 8rem; */
     }
 
     .library-image { 
