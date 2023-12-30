@@ -436,10 +436,10 @@ header {
 }
 
 .about-back {
-    right: 20rem;
+    right: 18rem;
     top: 16rem;
     position: absolute;
-    width: 55%;
+    width: 50%;
     height: fit-content;
     z-index: -1;
 }
@@ -466,10 +466,10 @@ header {
 }
 
 .library-back {
-    left: 42%;
-    top: 42%;
+    left: 43%;
+    top: 36%;
     position: absolute;
-    width: 36%;
+    width: 30%;
     height: fit-content;
     z-index: -1;
 }
@@ -587,7 +587,7 @@ header {
 }
 
 .social-back {
-    right: 55rem;
+    right: 68rem;
     top: 10rem;
     position: absolute;
     width: 45%;
@@ -1508,6 +1508,9 @@ tr.calendar-body .calendar-day .day.calendar-today {
     .social-content {
         left: 9rem;
     }
+
+
+
 }
 
 @media screen and (max-width: 1530px) {
@@ -1519,6 +1522,25 @@ tr.calendar-body .calendar-day .day.calendar-today {
     .social-content {
         left: 5rem;
     }
+
+    .about-back {
+        right: 20rem;
+        top: 16rem;
+        width: 55%;
+    }
+
+    .library-back {
+        left: 42%;
+        top: 42%;
+        width: 36%;
+    }
+
+    .social-back {
+        right: 55rem;
+        top: 10rem;
+        width: 45%;
+    }
+
 }
 
 @media screen and (max-width: 1350px) {
