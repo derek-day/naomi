@@ -471,6 +471,7 @@ header {
     width: 50%;
     height: fit-content;
     z-index: -1;
+    filter: blur(0.85px);
 }
 
 .library-image-container {
@@ -501,6 +502,7 @@ header {
     width: 30%;
     height: fit-content;
     z-index: -1;
+    filter: blur(0.65px);
 }
 
 .library-text-container {
@@ -622,6 +624,7 @@ header {
     width: 45%;
     height: fit-content;
     z-index: -1;
+    filter: blur(0.65px);
 }
 
 .social-side {
