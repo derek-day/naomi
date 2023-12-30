@@ -624,7 +624,7 @@ header {
     width: 45%;
     height: fit-content;
     z-index: -1;
-    filter: blur(0.65px);
+    filter: blur(0.35px);
 }
 
 .social-side {
