@@ -466,8 +466,8 @@ header {
 }
 
 .library-back {
-    left: 43%;
-    top: 36%;
+    left: 56%;
+    top: 38%;
     position: absolute;
     width: 30%;
     height: fit-content;
@@ -1530,7 +1530,7 @@ tr.calendar-body .calendar-day .day.calendar-today {
     }
 
     .library-back {
-        left: 42%;
+        left: 55%;
         top: 42%;
         width: 36%;
     }
