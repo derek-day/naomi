@@ -1695,6 +1695,7 @@ tr.calendar-body .calendar-day .day.calendar-today {
     .nav-logo {
         right: 1.5rem;
         position: relative;
+        width: 5rem;
     }
 
     #background {
