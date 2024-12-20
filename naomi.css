@@ -165,7 +165,7 @@ nav.scrolled {
     margin: 2rem auto 1.75rem;
     display: block;
     width: 7rem;
-
+    width: 5rem;
     animation:none;
     opacity:1;
 }
