@@ -22,37 +22,6 @@
     font-display: swap;
 }
 
-@font-face {
-    font-family: "Juana-Light";
-    src: url('assets/fonts/Juana-Light.otf') format("opentype");
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Juana-Light-It";
-    src: url('assets/fonts/Juana-Light-It.otf') format("opentype");
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Juana-ExtraLight-It";
-    src: url('assets/fonts/Juana-ExtraLight-It.otf') format("opentype");
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Juana-Regular";
-    src: url('assets/fonts/Juana-Regular.otf') format("opentype");
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Juana-Regular-It";
-    src: url('assets/fonts/Juana-Regular-It.otf') format("opentype");
-    font-display: swap;
-}
-
-
 :root {
     --background: #FFFCF4;
     --dark: #1E1E1E;
@@ -137,20 +106,33 @@ a:focus-within {
 
 h1 {
     /* font-family: 'Garamond-Light'; */
-    font-family: 'Juana-Regular';
+    font-family: "ivypresto-headline", serif;
+    font-weight: 400;
     font-size: var(--font-size-5);
-    font-weight: normal;
+    /* font-weight: normal; */
 }
 
 h2 {
     font-family: 'Garamond-Light';
+    font-family: "ivypresto-headline", serif;
+    font-weight: 300;
     font-size: var(--font-size-5);
-    font-weight: normal;
+}
+
+h3 {
+    font-family: "ivypresto-headline", serif;
+    font-weight: 300;
+}
+
+h4 {
+    font-family: "ivypresto-headline", serif;
+    font-weight: 200;
 }
 
 li {
     font-family: 'Satoshi-Light';
-    font-weight: normal;
+    font-family: "ivypresto-headline", serif;
+    font-weight: 300;
 }
 
 p {
@@ -158,8 +140,9 @@ p {
     /* font-size: 1.4rem; */
     font-size: 1.5rem;
     /* font-family: 'Satoshi-Regular'; */
-    font-family: 'Juana-Light';
     font-weight: normal;
+    font-family: "ivypresto-headline", serif;
+    font-weight: 300;
 }
 
 nav {
@@ -213,7 +196,8 @@ nav.scrolled {
 nav h1 {
     text-transform: uppercase;
     /* font-family: 'Garamond-Regular'; */
-    font-family: 'Juana-Regular';
+    font-family: "ivypresto-headline", serif;
+    font-weight: 400;
     text-align: center;
     margin-block-start: 0;
     margin-block-end: 0;
@@ -256,8 +240,9 @@ nav ul {
 
 nav li {
     /* font-family: 'Satoshi-Light'; */
-    font-family: 'Juana-Light';
     font-style: normal;
+    font-weight: 300;
+    font-family: "ivypresto-headline", serif;
     font-weight: 300;
     line-height: normal;
     /* font-size: 1.7rem; */
@@ -566,8 +551,9 @@ header {
     padding: 0rem 1.5rem;
     letter-spacing: 0.2rem;
     /* font-family: "Satoshi-Regular"; */
-    font-family: "Juana-Regular";
     font-weight: normal;
+    font-family: "ivypresto-headline", serif;
+    font-weight: 400;
 }
 
 .button:hover,
@@ -695,7 +681,8 @@ footer {
 footer h2 {
     color: var(--background);
     /* font-family: "Garamond-Light"; */
-    font-family: 'Juana-Regular';
+    font-family: "ivypresto-headline", serif;
+    font-weight: 400;
     /* font-size: 6.2rem; */
     /* font-size: 5.6rem; */
     font-size: 5rem;
@@ -768,7 +755,8 @@ footer h2 {
     list-style-type: none;
     color: var(--background);
     /* font-family: "Garamond-Light"; */
-    font-family: "Juana-Light";
+    font-family: "ivypresto-headline", serif;
+    font-weight: 300;
     /* font-size: 2.4rem; */
     font-size: 2rem;
     padding: 0.5rem 0;
@@ -817,7 +805,8 @@ footer h2 {
 
 .library-text-header h1 {
     /* font-weight: bold; */
-    font-family: "Juana-Regular";
+    font-family: "ivypresto-headline", serif;
+    font-weight: 400;
     font-size: 5.6rem;
 }
 
@@ -960,7 +949,7 @@ footer h2 {
 }
 
 .accent {
-    font-size: 1.8rem;
+    /* font-size: 1.8rem; */
     color: #4a4a4a;
 }
 
@@ -978,7 +967,7 @@ footer h2 {
 }
 
 #gallery span {
-    font-size: 7.5rem;
+    /* font-size: 7.5rem; */
 }
 
 #gallery a:hover,
@@ -1004,6 +993,7 @@ footer h2 {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    gap: 0.5rem;
     margin: 2rem 0;
 }
 
@@ -1196,7 +1186,8 @@ footer h2 {
     background-clip: padding-box;
     /* border: 1px solid #ced4da; */
     border: 1px solid var(--dark);
-    font-family: "Juana-Light";
+    font-family: "ivypresto-headline", serif;
+    font-weight: 300;
     outline: none;
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -1217,12 +1208,14 @@ footer h2 {
   }
 
   input {
-    font-family: "Juana-Light";
+    font-family: "ivypresto-headline", serif;
+    font-weight: 300;
     font-size: 1.5rem;
   }
 
   label {
-    font-family: "Juana-Regular";
+    font-family: "ivypresto-headline", serif;
+    font-weight: 400;
     font-size: 2rem;
   }
   
@@ -1384,7 +1377,6 @@ footer h2 {
 }
 
 th {
-    font-family: 'Juana-Regular';
     font-family: "Garamond-Regular" !important;
     color: var(--dark) !important;
     padding: 1rem 0;
@@ -1396,6 +1388,8 @@ th::after {
 
 td {
     font-family: 'Satoshi-Light';
+    font-family: "ivypresto-headline", serif;
+    font-weight: 300;
     color: var(--dark) !important;
 }
 
@@ -1405,7 +1399,8 @@ td {
 }
 
 .calendar-months li {
-    font-family: 'Juana-Light';
+    font-family: "ivypresto-headline", serif;
+    font-weight: 300;
     color: var(--background);
 }
 
@@ -1418,7 +1413,8 @@ tr.calendar-body .calendar-day .day {
 }
 
 tr.calendar-header .calendar-header-day {
-    font-family: 'Juana-Light';
+    font-family: "ivypresto-headline", serif;
+    font-weight: 300;
 }
 
 .calendar-table {
@@ -1853,14 +1849,16 @@ tr.calendar-body .calendar-day .day.calendar-today {
 
     .library-text-header h1 {
         /* font-weight: bold; */
-        font-family: "Juana-Regular";
+        font-family: "ivypresto-headline", serif;
+        font-weight: 400;    
         font-size: 4rem;
     }
 
     .library-text-header h2 {
         /* padding-left: 0; */
         text-align: center;
-        font-family: "Juana-Regular";
+        font-family: "ivypresto-headline", serif;
+        font-weight: 400;    
         font-size: 3rem;
     }
 
@@ -1990,11 +1988,11 @@ tr.calendar-body .calendar-day .day.calendar-today {
     }
 
     #gallery span {
-        font-size: 3.3rem;
+        /* font-size: 3.3rem; */
     }
 
     .accent {
-        font-size: 1.5rem;
+        /* font-size: 1.5rem; */
     }
 
     .connect {
