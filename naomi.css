@@ -448,7 +448,7 @@ header {
 
 .about-text-container p {
     max-width: 60%;
-    text-wrap: balance;
+    /* text-wrap: balance; */
 }
 
 .about-back {
