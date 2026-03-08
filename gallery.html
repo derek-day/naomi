@@ -20,295 +20,498 @@
     <link rel="stylesheet" href="lightbox.min.css">
     <script src="jquery.js" defer></script>
     <script src="lightbox.js" defer></script>
+
+    <style>
+      /* ── Override .container grid so #gallery isn't forced into 2-col layout ── */
+      #gallery.container {
+        display: block;
+        margin: 6rem auto 8rem;
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        justify-items: center;
+      }
+
+      /* ── Section heading ── */
+      #gallery .section-title {
+        font-family: "ivypresto-headline", serif;
+        font-weight: 400;
+        /* font-size: var(--font-size-5); */
+        font-size: 6.8rem;
+        color: #1E1E1E;
+        text-align: center;
+        padding: 0 2rem 1rem;
+        letter-spacing: 0.02em;
+        margin: 0;
+        margin: 0 0 3rem;
+      }
+
+      .section-subtitle {
+        font-family: 'Satoshi-Light', system-ui, sans-serif;
+        font-size: 1.8rem;
+        /* color: #888; */
+        text-align: center;
+        margin: 0 0 3rem;
+      }
+
+      /* ── Event folder grid ── */
+      .event-folders {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+        gap: 2.4rem;
+        padding: 0 5%;
+        max-width: 110rem;
+        margin: 0 auto;
+        box-sizing: border-box;
+      }
+
+      /* ── Individual folder card ── */
+      .event-folder {
+        cursor: pointer;
+        border: 1.5px solid rgba(142, 84, 56, 0.22);
+        border-radius: 0.6rem;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        transition: box-shadow 0.25s ease, transform 0.2s ease;
+      }
+
+      .event-folder:hover {
+        box-shadow: 0 6px 22px rgba(142, 84, 56, 0.16);
+        transform: translateY(-3px);
+      }
+
+      /* Folder tab accent at top */
+      /* .event-folder::before {
+        content: '';
+        display: block;
+        height: 0.45rem;
+        background: #8E5438;
+        width: 100%;
+      } */
+
+      /* Preview strip of 3 thumbnails */
+      .folder-preview {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0.25rem;
+        height: 15rem;
+        overflow: hidden;
+        background: #f5ede6;
+      }
+
+      .folder-preview img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: opacity 0.3s;
+      }
+
+      .event-folder:hover .folder-preview img {
+        opacity: 0.88;
+      }
+
+      /* Folder label area */
+      .folder-label {
+        padding: 1.6rem 2rem 1.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .folder-label h2 {
+        font-family: "ivypresto-headline", serif;
+        font-weight: 300;
+        font-size: 1.9rem;
+        color: #1E1E1E;
+        line-height: 1.3;
+        margin: 0;
+      }
+
+      .folder-label .photo-count {
+        font-family: 'Satoshi-Regular', system-ui, sans-serif;
+        font-size: 1.3rem;
+        color: #8E5438;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .folder-label .chevron {
+        width: 1.8rem;
+        height: 1.8rem;
+        flex-shrink: 0;
+        color: #8E5438;
+      }
+
+      .folder-credits {
+        font-family: 'Satoshi-Light', system-ui, sans-serif;
+        font-size: 1.2rem;
+        /* color: #999; */
+        padding: 0 2rem 1.4rem;
+        margin: 0;
+      }
+
+      /* ── Overlay ── */
+      .gallery-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        background: rgba(20, 14, 10, 0.96);
+        flex-direction: column;
+        align-items: center;
+        overflow-y: auto;
+        padding: 5rem 2rem 6rem;
+        animation: fadeIn 0.22s ease;
+      }
+
+      .gallery-overlay.open {
+        display: flex;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
+
+      .overlay-header {
+        width: 100%;
+        max-width: 120rem;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 3rem;
+        gap: 2rem;
+      }
+
+      .overlay-header h2 {
+        font-family: "ivypresto-headline", serif;
+        font-weight: 300;
+        font-size: 3.2rem;
+        color: #FFFCF4;
+        line-height: 1.2;
+        margin: 0;
+      }
+
+      .overlay-header .overlay-credits {
+        font-family: 'Satoshi-Light', system-ui, sans-serif;
+        font-size: 1.35rem;
+        color: #b09080;
+        margin-top: 0.6rem;
+      }
+
+      .close-btn {
+        background: none;
+        border: 1.5px solid rgba(255,252,244,0.3);
+        border-radius: 50%;
+        width: 4.2rem;
+        height: 4.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: #FFFCF4;
+        flex-shrink: 0;
+        transition: background 0.2s, border-color 0.2s;
+      }
+
+      .close-btn:hover {
+        background: rgba(255,252,244,0.1);
+        border-color: rgba(255,252,244,0.6);
+      }
+
+      .close-btn svg {
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+
+      .overlay-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+        gap: 1.2rem;
+        width: 100%;
+        max-width: 120rem;
+      }
+
+      .overlay-grid .img-hover-zoom {
+        aspect-ratio: 4/3;
+        overflow: hidden;
+        border-radius: 0.4rem;
+        background: #2a1f1a;
+      }
+
+      .overlay-grid .img-hover-zoom img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease, opacity 0.3s;
+        cursor: zoom-in;
+      }
+
+      .overlay-grid .img-hover-zoom:hover img {
+        transform: scale(1.04);
+        opacity: 0.9;
+      }
+
+      /* Mobile */
+      @media (max-width: 768px) {
+        .event-folders {
+          grid-template-columns: 1fr;
+          padding: 0 2rem;
+        }
+
+        .overlay-grid {
+          grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+        }
+
+        .overlay-header h2 {
+          font-size: 2.2rem;
+        }
+
+        #gallery .section-title {
+          font-size: 4.5rem;
+          margin: 0 0 2rem;
+        }
+
+        .section-subtitle {
+          margin: 0 0 2rem;
+        }
+      }
+    </style>
   </head>
 
-    <body class="preload">
+  <body class="preload">
 
-      <nav id="nav">
-        <a href="home.html"><img class="nav-logo" src="assets/images/logoletters.png" alt="Ella's Artistry Letter Logo"></a>
-        <!-- <h1><a href="#top">Ella<span style="font-family:'Garamond-Regular';">'</span>s Artistry</a></h1> -->
-        <ul>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="shop.html">Book</a></li>
-          <li><a href="#top">Gallery</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="connect.html">Connect</a></li>
-        </ul>
-      </nav>
+    <nav id="nav">
+      <a href="home.html"><img class="nav-logo" src="assets/images/logoletters.png" alt="Ella's Artistry Letter Logo"></a>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="shop.html">Book</a></li>
+        <li><a href="#top">Gallery</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="connect.html">Connect</a></li>
+      </ul>
+    </nav>
 
-      <main>
+    <main>
 
       <!-- Vine background -->
-      <section id="shop-background" class="background">
-      </section>
-
+      <section id="connect-background" class="background"></section>
       <!-- Mobile vine background -->
-      <section id="shop-background-mob" class="background">
-      </section>      
-      
+      <section id="connect-background-mob" class="background"></section>
+
       <section class="container" id="gallery">
-        <h1>March<span>é</span> de la Po<span>é</span>sie, Paris 2023</h1>
-        <div class="gallery">
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/marche/2.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/marche/2.webp" alt="Cover of Unesco book for Marché de la Poèsie">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/marche/3.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/marche/3.webp" alt="Selfie of Angella outside">
-          </a>
-        </div>
+        <h1 class="section-title">Gallery</h1>
+        <!-- <p class="section-subtitle" style="margin: 1rem 0 2rem;">Select an event to view photos</p> -->
 
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/marche/4.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/marche/4.webp" alt="Photo of event stage">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/marche/5.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/marche/5.webp" alt="Angella standing in front of event board with her photo">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/marche/6.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/marche/6.webp" alt="Angella holding Poetic Keepsake in front of event board">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/marche/7.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/marche/7.webp" alt="Angella holding Poetic Keepsake outside of the event">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/marche/8.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/marche/8.webp" alt="Angella standing outside of the event holding Poetic Keepsake">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/marche/9.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/marche/9.webp" alt="Event stage with speakers and audience">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/marche/10.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/marche/10.webp" loading="lazy" alt="Angella and an audience member in front of the stage">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/marche/11.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/marche/11.webp" loading="lazy" alt="Angella and an audience member in front of the event board">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/marche/12.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/marche/12.webp" loading="lazy" alt="Angella and an audience member in front of the event board">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/marche/13.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/marche/13.webp" loading="lazy" alt="Shot of stage with Angella and four other speakers">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/marche/14.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/marche/14.webp" loading="lazy" alt="Shot of stage with Angella and four other speakers">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/marche/15.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/marche/15.webp" loading="lazy" alt="Shot of Angella speaking at event with another author seated next to her">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/marche/16.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/marche/16.webp" loading="lazy" alt="Angella at a table with merchandise next to two other authors">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/marche/17.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/marche/17.webp" loading="lazy" alt="Group shot of Angella and six other authors">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/marche/18.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/marche/18.webp" loading="lazy" alt="Group shot of Angella and thirteen other authors">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/marche/19.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/marche/19.webp" loading="lazy" alt="Group shot of Angella and nine other authors">
-          </a>
-        </div>
-          <a></a>
-        </div>
+        <!-- ── Event folder cards ── -->
+        <div class="event-folders">
 
-        <h1>Poetic Keepsake Book Launch</h1>
-        <h2 style="margin: 1rem 0 2.5rem;color:#3e3e3e;">Photography Credits to Charla Samuel and Kenser Marcellin</h2>
-        <div class="gallery">
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/launch/1.png" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/launch/1.png" loading="lazy" alt="Image of Poetic Keepsake cover on top of a stack of other copies">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/launch/2.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/launch/2.webp" loading="lazy" alt="Angella on stage speaking">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/launch/3.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/launch/3.webp" loading="lazy" alt="Shot of Angella and an audience member">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/launch/4.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/launch/4.webp" loading="lazy" alt="Shot of Angella and an audience member">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/launch/5.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/launch/5.webp" loading="lazy" alt="Shot of Angella and an audience member">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/launch/6.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/launch/6.webp" loading="lazy" alt="Shot of Angella and an audience member">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/launch/7.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/launch/7.webp" loading="lazy" alt="Shot of Angella and an audience member">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/launch/8.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/launch/8.webp" loading="lazy" alt="Shot of Angella and an audience member">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/launch/9.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/launch/9.webp" loading="lazy" alt="Shot of Angella and an audience member">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/launch/10.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/launch/10.webp" loading="lazy" alt="Shot of Angella and an audience member">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/launch/11.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/launch/11.webp" loading="lazy" alt="Shot of Angella and an audience member">
-          </a>
-        </div>
-          <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/launch/12.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/launch/12.webp" loading="lazy" alt="Shot of Angella holding a celebrate balloon">
-          </a>
-        </div>
-        <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/launch/13.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/launch/13.webp" loading="lazy" alt="Shot of Angella and an audience member">
-          </a>
-        </div>
-        <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/launch/14.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/launch/14.webp" loading="lazy" alt="Shot of Angella and an audience member">
-          </a>
-        </div>
-        <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/launch/15.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/launch/15.webp" loading="lazy" alt="Shot of Angella and an audience member">
-          </a>
-        </div>
-        <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/launch/16.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/launch/16.webp" loading="lazy" alt="Shot of Angella and an audience member">
-          </a>
-        </div>
-        <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/launch/17.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/launch/17.webp" loading="lazy" alt="Shot of a man speaking on stage">
-          </a>
-        </div>
-        <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/launch/18.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/launch/18.webp" loading="lazy" alt="Shot of Angella smiling and a man speaking">
-          </a>
-        </div>
-        <div class="img-hover-zoom">
-          <a class="demo" href="assets/images/gallery/launch/19.webp" data-lightbox="gallery">
-            <img class="example-image" src="assets/images/gallery/launch/19.webp" loading="lazy" alt="Shot of Angella and an audience member">
-          </a>
-        </div>
+          <!-- Folder 1: Marché de la Poésie -->
+          <div class="event-folder" onclick="openGallery('marche')" role="button" tabindex="0" aria-label="Open Marché de la Poésie gallery">
+            <div class="folder-preview">
+              <img src="assets/images/gallery/marche/2.webp"  alt="" loading="lazy">
+              <img src="assets/images/gallery/marche/5.webp"  alt="" loading="lazy">
+              <img src="assets/images/gallery/marche/10.webp" alt="" loading="lazy">
+            </div>
+            <div class="folder-label">
+              <h2>March&eacute; de la Po&eacute;sie, Paris 2023</h2>
+              <span class="photo-count">18 photos</span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </div>
 
+          <!-- Folder 2: Book Launch -->
+          <div class="event-folder" onclick="openGallery('launch')" role="button" tabindex="0" aria-label="Open Book Launch gallery">
+            <div class="folder-preview">
+              <img src="assets/images/gallery/launch/1.png"  alt="" loading="lazy">
+              <img src="assets/images/gallery/launch/2.webp" alt="" loading="lazy">
+              <img src="assets/images/gallery/launch/8.webp" alt="" loading="lazy">
+            </div>
+            <div class="folder-label">
+              <h2>Poetic Keepsake Book Launch</h2>
+              <span class="photo-count">19 photos</span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+            <p class="folder-credits" style="max-width: 100%; margin: 0;">Photography: Charla Samuel &amp; Kenser Marcellin</p>
+          </div>
 
-          <a></a>
         </div>
-          
       </section>
 
-      </main>
+    </main>
 
-      <footer>
-        <div class="footer-grid">
-          <div class="footer-left" style="bottom: -2rem;">
-            <h2 style="position: relative;left: 3rem;bottom:-1rem;">Ella<span style="font-family:'Garamond-Regular';">'</span>s</h2>
-
-            <div class="footer-media">
-              <a href="https://www.facebook.com/ellathepoet/" target="_blank"><img src="assets/images/facebook.png" loading="lazy" alt="Facebook link"></a>
-              <a href="https://www.instagram.com/ellasartist.ry/" target="_blank"><img src="assets/images/instagram.png" loading="lazy" alt="Instagram link"></a>
-            </div>
-
-            <div class="footer-nav">
-              <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="shop.html">Book</a></li>
-                <li><a href="#top">Gallery</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="connect.html">Connect</a></li>
-              </ul>
-            </div>
-
-            <img class="footer-nav-image" src="assets/images/sidefooter.jpg" loading="lazy" alt="Image of green leaves">
-          </div>
-
-          <div class="footer-right">
-            <h2 style="position:relative;bottom: -1.75rem;">Artistry</h2>
-            <!-- <h2 style="position:relative;bottom: -1rem;color: #2F6026;text-shadow: 0px 0 black, 0 0px black, 1px 0 black, 0 -1px black;mix-blend-mode: plus-lighter;">Artistry</h2> -->
-            <!-- <h2 style="position:relative;bottom: -1rem;">Artistry</h2> -->
-            <!-- <img class="footer-image" src="assets/images/mainfooter.png" loading="lazy" alt="Image of Angella holding Poetic Keepsake in front of a blue gradient"> -->
-            <!-- <h2 style="position:relative;bottom: -1rem;"><span style="background-color: rgba(142, 84, 56, 0.8);">Artistry</span></h2> -->
-            <img class="footer-image" style="width: 30rem;" src="assets/images/a.webp" loading="lazy" alt="Image of Angella holding Poetic Keepsake in front of a blue gradient">
-          </div>
+    <!-- ════════════════════════════════════════
+         OVERLAY — Marché de la Poésie
+    ════════════════════════════════════════ -->
+    <div class="gallery-overlay" id="overlay-marche" role="dialog" aria-modal="true" aria-label="Marché de la Poésie gallery">
+      <div class="overlay-header">
+        <div>
+          <h2>March&eacute; de la Po&eacute;sie, Paris 2023</h2>
         </div>
-      </footer>
+        <button class="close-btn" onclick="closeGallery('marche')" aria-label="Close gallery">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="overlay-grid">
+        <div class="img-hover-zoom"><a href="assets/images/gallery/marche/2.webp"  data-lightbox="marche"><img src="assets/images/gallery/marche/2.webp"  alt="Cover of Unesco book for Marché de la Poèsie"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/marche/3.webp"  data-lightbox="marche"><img src="assets/images/gallery/marche/3.webp"  alt="Selfie of Angella outside"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/marche/4.webp"  data-lightbox="marche"><img src="assets/images/gallery/marche/4.webp"  alt="Photo of event stage"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/marche/5.webp"  data-lightbox="marche"><img src="assets/images/gallery/marche/5.webp"  alt="Angella standing in front of event board with her photo"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/marche/6.webp"  data-lightbox="marche"><img src="assets/images/gallery/marche/6.webp"  alt="Angella holding Poetic Keepsake in front of event board"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/marche/7.webp"  data-lightbox="marche"><img src="assets/images/gallery/marche/7.webp"  loading="lazy" alt="Angella holding Poetic Keepsake outside of the event"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/marche/8.webp"  data-lightbox="marche"><img src="assets/images/gallery/marche/8.webp"  loading="lazy" alt="Angella standing outside of the event holding Poetic Keepsake"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/marche/9.webp"  data-lightbox="marche"><img src="assets/images/gallery/marche/9.webp"  loading="lazy" alt="Event stage with speakers and audience"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/marche/10.webp" data-lightbox="marche"><img src="assets/images/gallery/marche/10.webp" loading="lazy" alt="Angella and an audience member in front of the stage"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/marche/11.webp" data-lightbox="marche"><img src="assets/images/gallery/marche/11.webp" loading="lazy" alt="Angella and an audience member in front of the event board"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/marche/12.webp" data-lightbox="marche"><img src="assets/images/gallery/marche/12.webp" loading="lazy" alt="Angella and an audience member in front of the event board"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/marche/13.webp" data-lightbox="marche"><img src="assets/images/gallery/marche/13.webp" loading="lazy" alt="Shot of stage with Angella and four other speakers"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/marche/14.webp" data-lightbox="marche"><img src="assets/images/gallery/marche/14.webp" loading="lazy" alt="Shot of stage with Angella and four other speakers"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/marche/15.webp" data-lightbox="marche"><img src="assets/images/gallery/marche/15.webp" loading="lazy" alt="Shot of Angella speaking at event with another author seated next to her"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/marche/16.webp" data-lightbox="marche"><img src="assets/images/gallery/marche/16.webp" loading="lazy" alt="Angella at a table with merchandise next to two other authors"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/marche/17.webp" data-lightbox="marche"><img src="assets/images/gallery/marche/17.webp" loading="lazy" alt="Group shot of Angella and six other authors"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/marche/18.webp" data-lightbox="marche"><img src="assets/images/gallery/marche/18.webp" loading="lazy" alt="Group shot of Angella and thirteen other authors"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/marche/19.webp" data-lightbox="marche"><img src="assets/images/gallery/marche/19.webp" loading="lazy" alt="Group shot of Angella and nine other authors"></a></div>
+      </div>
+    </div>
 
-      <section id="footer-mob" style="background-color: #8E5438;margin-top:5rem;">
-        <div style="padding: 3rem 0 0;" class="">
+    <!-- ════════════════════════════════════════
+         OVERLAY — Book Launch
+    ════════════════════════════════════════ -->
+    <div class="gallery-overlay" id="overlay-launch" role="dialog" aria-modal="true" aria-label="Book Launch gallery">
+      <div class="overlay-header">
+        <div>
+          <h2>Poetic Keepsake Book Launch</h2>
+          <p class="overlay-credits">Photography: Charla Samuel &amp; Kenser Marcellin</p>
+        </div>
+        <button class="close-btn" onclick="closeGallery('launch')" aria-label="Close gallery">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="overlay-grid">
+        <div class="img-hover-zoom"><a href="assets/images/gallery/launch/1.png"   data-lightbox="launch"><img src="assets/images/gallery/launch/1.png"   loading="lazy" alt="Image of Poetic Keepsake cover on top of a stack of other copies"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/launch/2.webp"  data-lightbox="launch"><img src="assets/images/gallery/launch/2.webp"  loading="lazy" alt="Angella on stage speaking"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/launch/3.webp"  data-lightbox="launch"><img src="assets/images/gallery/launch/3.webp"  loading="lazy" alt="Shot of Angella and an audience member"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/launch/4.webp"  data-lightbox="launch"><img src="assets/images/gallery/launch/4.webp"  loading="lazy" alt="Shot of Angella and an audience member"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/launch/5.webp"  data-lightbox="launch"><img src="assets/images/gallery/launch/5.webp"  loading="lazy" alt="Shot of Angella and an audience member"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/launch/6.webp"  data-lightbox="launch"><img src="assets/images/gallery/launch/6.webp"  loading="lazy" alt="Shot of Angella and an audience member"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/launch/7.webp"  data-lightbox="launch"><img src="assets/images/gallery/launch/7.webp"  loading="lazy" alt="Shot of Angella and an audience member"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/launch/8.webp"  data-lightbox="launch"><img src="assets/images/gallery/launch/8.webp"  loading="lazy" alt="Shot of Angella and an audience member"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/launch/9.webp"  data-lightbox="launch"><img src="assets/images/gallery/launch/9.webp"  loading="lazy" alt="Shot of Angella and an audience member"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/launch/10.webp" data-lightbox="launch"><img src="assets/images/gallery/launch/10.webp" loading="lazy" alt="Shot of Angella and an audience member"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/launch/11.webp" data-lightbox="launch"><img src="assets/images/gallery/launch/11.webp" loading="lazy" alt="Shot of Angella and an audience member"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/launch/12.webp" data-lightbox="launch"><img src="assets/images/gallery/launch/12.webp" loading="lazy" alt="Shot of Angella holding a celebrate balloon"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/launch/13.webp" data-lightbox="launch"><img src="assets/images/gallery/launch/13.webp" loading="lazy" alt="Shot of Angella and an audience member"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/launch/14.webp" data-lightbox="launch"><img src="assets/images/gallery/launch/14.webp" loading="lazy" alt="Shot of Angella and an audience member"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/launch/15.webp" data-lightbox="launch"><img src="assets/images/gallery/launch/15.webp" loading="lazy" alt="Shot of Angella and an audience member"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/launch/16.webp" data-lightbox="launch"><img src="assets/images/gallery/launch/16.webp" loading="lazy" alt="Shot of Angella and an audience member"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/launch/17.webp" data-lightbox="launch"><img src="assets/images/gallery/launch/17.webp" loading="lazy" alt="Shot of a man speaking on stage"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/launch/18.webp" data-lightbox="launch"><img src="assets/images/gallery/launch/18.webp" loading="lazy" alt="Shot of Angella smiling and a man speaking"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/launch/19.webp" data-lightbox="launch"><img src="assets/images/gallery/launch/19.webp" loading="lazy" alt="Shot of Angella and an audience member"></a></div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-left" style="bottom: -2rem;">
+          <h2 style="position: relative;left: 3rem;bottom:-1rem;">Ella<span style="font-family:'Garamond-Regular';">'</span>s</h2>
+          <div class="footer-media">
+            <a href="https://www.facebook.com/ellathepoet/" target="_blank"><img src="assets/images/facebook.png" loading="lazy" alt="Facebook link"></a>
+            <a href="https://www.instagram.com/ellasartist.ry/" target="_blank"><img src="assets/images/instagram.png" loading="lazy" alt="Instagram link"></a>
+          </div>
+          <div class="footer-nav">
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="shop.html">Book</a></li>
+              <li><a href="#top">Gallery</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="connect.html">Connect</a></li>
+            </ul>
+          </div>
+          <img class="footer-nav-image" src="assets/images/sidefooter.jpg" loading="lazy" alt="Image of green leaves">
+        </div>
+        <div class="footer-right">
+          <h2 style="position:relative;bottom: -1.75rem;">Artistry</h2>
+          <img class="footer-image" style="width: 30rem;" src="assets/images/a.webp" loading="lazy" alt="Image of Angella holding Poetic Keepsake in front of a blue gradient">
+        </div>
+      </div>
+    </footer>
+
+    <section id="footer-mob" style="background-color: #8E5438;margin-top:5rem;">
+      <div style="padding: 3rem 0 0;" class="">
+        <div class="">
+          <h2 style="color:var(--background);font-size: 3.6rem; text-transform:uppercase;text-align:center">Ella<span style="font-family:'Garamond-Light';">'</span>s Artistry</h2>
           <div class="">
-            <h2 style="color:var(--background);font-size: 3.6rem; text-transform:uppercase;text-align:center">Ella<span style="font-family:'Garamond-Light';">'</span>s Artistry</h2>        
-
-            <div class="">
-              <ul style="display:grid;grid-template-columns: 1fr 1fr 1fr 1fr 1fr;list-style-type: none;padding: 0.5rem 0 1rem;letter-spacing: 0.05rem;place-items:center;gap:2rem;">
-                <li><a style="color: var(--background);font-size: 1.5rem;text-decoration: none;" href="home.html">Home</a></li>
-                <li><a style="color: var(--background);font-size: 1.5rem;text-decoration: none;" href="shop.html">Book</a></li>
-                <li><a style="color: var(--background);font-size: 1.5rem;text-decoration: none;" href="#top">Gallery</a></li>
-                <li><a style="color: var(--background);font-size: 1.5rem;text-decoration: none;" href="events.html">Events</a></li>
-                <li><a style="color: var(--background);font-size: 1.5rem;text-decoration: none;" href="connect.html">Connect</a></li>
-              </ul>
-            </div>
+            <ul style="display:grid;grid-template-columns: 1fr 1fr 1fr 1fr 1fr;list-style-type: none;padding: 0.5rem 0 1rem;letter-spacing: 0.05rem;place-items:center;gap:2rem;">
+              <li><a style="color: var(--background);font-size: 1.5rem;text-decoration: none;" href="home.html">Home</a></li>
+              <li><a style="color: var(--background);font-size: 1.5rem;text-decoration: none;" href="shop.html">Book</a></li>
+              <li><a style="color: var(--background);font-size: 1.5rem;text-decoration: none;" href="#top">Gallery</a></li>
+              <li><a style="color: var(--background);font-size: 1.5rem;text-decoration: none;" href="events.html">Events</a></li>
+              <li><a style="color: var(--background);font-size: 1.5rem;text-decoration: none;" href="connect.html">Connect</a></li>
+            </ul>
           </div>
-
-          <img class="" style="width:100%;margin-bottom: 3rem;" src="assets/images/footerimage.webp" loading="lazy" alt="Image of Angella holding Poetic Keepsake in front of a blue gradient">
         </div>
-      </section>
-      </footer>
+        <img class="" style="width:100%;margin-bottom: 3rem;" src="assets/images/footerimage.webp" loading="lazy" alt="Image of Angella holding Poetic Keepsake in front of a blue gradient">
+      </div>
+    </section>
 
+    <script>
+      document.body.classList.remove('preload');
 
-      <script>
-        document.body.classList.remove('preload');
-      </script>  
-      <script src="naomi.js" defer></script>
-    </body>
+      function openGallery(id) {
+        const overlay = document.getElementById('overlay-' + id);
+        if (!overlay) return;
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        overlay.scrollTop = 0;
+        // Re-init lightbox if available
+        if (typeof lightbox !== 'undefined') {
+          lightbox.option({ 'resizeDuration': 200, 'wrapAround': true });
+        }
+      }
+
+      function closeGallery(id) {
+        const overlay = document.getElementById('overlay-' + id);
+        if (!overlay) return;
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      // Close on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          document.querySelectorAll('.gallery-overlay.open').forEach(function(el) {
+            el.classList.remove('open');
+          });
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Allow keyboard activation of folder cards
+      document.querySelectorAll('.event-folder').forEach(function(card) {
+        card.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            card.click();
+          }
+        });
+      });
+    </script>
+
+    <script src="naomi.js" defer></script>
+  </body>
 </html>
