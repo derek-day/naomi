@@ -1990,7 +1990,7 @@ tr.calendar-body .calendar-day .day.calendar-today {
 
     #gallery h2 {
         font-size: 1.5rem;
-        text-align: center;
+        /* text-align: center; */
     }
 
     #gallery span {

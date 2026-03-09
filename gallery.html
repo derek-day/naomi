@@ -311,7 +311,39 @@
         <!-- ── Event folder cards ── -->
         <div class="event-folders">
 
-          <!-- Folder 1: Marché de la Poésie -->
+          <!-- Folder 1: Bridgetown -->
+          <div class="event-folder" onclick="openGallery('bridgetown')" role="button" tabindex="0" aria-label="Open Bridgetown gallery">
+            <div class="folder-preview">
+              <img src="assets/images/gallery/bridgetown/1.webp"  alt="" loading="lazy">
+              <img src="assets/images/gallery/bridgetown/5.webp"  alt="" loading="lazy">
+              <img src="assets/images/gallery/bridgetown/3.webp" alt="" loading="lazy">
+            </div>
+            <div class="folder-label">
+              <h2>Barbados' Bridgetown Arts Festival 2025</h2>
+              <span class="photo-count">8 photos</span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Folder 2: Awards -->
+          <div class="event-folder" onclick="openGallery('awards')" role="button" tabindex="0" aria-label="Open Awards gallery">
+            <div class="folder-preview">
+              <img src="assets/images/gallery/awards/1.webp"  alt="" loading="lazy">
+              <img src="assets/images/gallery/awards/2.webp"  alt="" loading="lazy">
+              <img src="assets/images/gallery/awards/3.webp" alt="" loading="lazy">
+            </div>
+            <div class="folder-label">
+              <h2>Saint Lucia National Youth Awards 2024</h2>
+              <span class="photo-count">6 photos</span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Folder 3: Marché de la Poésie -->
           <div class="event-folder" onclick="openGallery('marche')" role="button" tabindex="0" aria-label="Open Marché de la Poésie gallery">
             <div class="folder-preview">
               <img src="assets/images/gallery/marche/2.webp"  alt="" loading="lazy">
@@ -348,6 +380,60 @@
       </section>
 
     </main>
+
+
+    <!-- ════════════════════════════════════════
+         OVERLAY — Barbados' Bridgetown Arts Festival 2025
+    ════════════════════════════════════════ -->
+    <div class="gallery-overlay" id="overlay-bridgetown" role="dialog" aria-modal="true" aria-label="Barbados' Bridgetown Arts Festival 2025">
+      <div class="overlay-header">
+        <div>
+          <h2>Barbados' Bridgetown Arts Festival 2025</h2>
+        </div>
+        <button class="close-btn" onclick="closeGallery('bridgetown')" aria-label="Close gallery">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="overlay-grid">
+        <div class="img-hover-zoom"><a href="assets/images/gallery/bridgetown/2.webp"  data-lightbox="marche"><img src="assets/images/gallery/bridgetown/2.webp"  alt="Cover of Unesco book for Barbados' Bridgetown Arts Festival 2025"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/bridgetown/3.webp"  data-lightbox="marche"><img src="assets/images/gallery/bridgetown/3.webp"  alt="Selfie of Angella outside"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/bridgetown/4.webp"  data-lightbox="marche"><img src="assets/images/gallery/bridgetown/4.webp"  alt="Photo of event stage"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/bridgetown/5.webp"  data-lightbox="marche"><img src="assets/images/gallery/bridgetown/5.webp"  alt="Angella standing in front of event board with her photo"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/bridgetown/6.webp"  data-lightbox="marche"><img src="assets/images/gallery/bridgetown/6.webp"  alt="Angella holding Poetic Keepsake in front of event board"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/bridgetown/7.webp"  data-lightbox="marche"><img src="assets/images/gallery/bridgetown/7.webp"  loading="lazy" alt="Angella holding Poetic Keepsake outside of the event"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/bridgetown/8.webp"  data-lightbox="marche"><img src="assets/images/gallery/bridgetown/8.webp"  loading="lazy" alt="Angella standing outside of the event holding Poetic Keepsake"></a></div>
+        <!-- <div class="img-hover-zoom"><video src="assets/images/gallery/bridgetown/1.mp4"  loading="lazy" alt="Event stage with speakers and audience"></video></div></div> -->
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════
+         OVERLAY — Saint Lucia National Youth Awards 2024
+    ════════════════════════════════════════ -->
+    <div class="gallery-overlay" id="overlay-awards" role="dialog" aria-modal="true" aria-label="Saint Lucia National Youth Awards 2024">
+      <div class="overlay-header">
+        <div>
+          <h2>Saint Lucia National Youth Awards 2024</h2>
+        </div>
+        <button class="close-btn" onclick="closeGallery('awards')" aria-label="Close gallery">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="overlay-grid">
+        <div class="img-hover-zoom"><a href="assets/images/gallery/awards/1.webp"  data-lightbox="marche"><img src="assets/images/gallery/awards/1.webp"  alt="Cover of Unesco book for Saint Lucia National Youth Awards 2024"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/awards/2.webp"  data-lightbox="marche"><img src="assets/images/gallery/awards/2.webp"  alt="Selfie of Angella outside"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/awards/3.webp"  data-lightbox="marche"><img src="assets/images/gallery/awards/3.webp"  alt="Photo of event stage"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/awards/4.webp"  data-lightbox="marche"><img src="assets/images/gallery/awards/4.webp"  alt="Angella standing in front of event board with her photo"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/awards/5.webp"  data-lightbox="marche"><img src="assets/images/gallery/awards/5.webp"  alt="Angella holding Poetic Keepsake in front of event board"></a></div>
+        <div class="img-hover-zoom"><a href="assets/images/gallery/awards/6.webp"  data-lightbox="marche"><img src="assets/images/gallery/awards/6.webp"  alt="Angella holding Poetic Keepsake in front of event board"></a></div>
+      </div>
+    </div>
+
 
     <!-- ════════════════════════════════════════
          OVERLAY — Marché de la Poésie
